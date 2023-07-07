@@ -1,0 +1,91 @@
+﻿{"frames": {
+
+"perk_health0000":
+{
+	"frame": {"x":144,"y":286,"w":122,"h":129},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":129},
+	"sourceSize": {"w":122,"h":129}
+},
+"perk_speed0000":
+{
+	"frame": {"x":278,"y":400,"w":157,"h":89},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":157,"h":89},
+	"sourceSize": {"w":157,"h":89}
+},
+"weapon_bubble_shield0000":
+{
+	"frame": {"x":333,"y":134,"w":129,"h":129},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":129,"h":129},
+	"sourceSize": {"w":129,"h":129}
+},
+"weapon_drill0000":
+{
+	"frame": {"x":333,"y":6,"w":147,"h":116},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":147,"h":116},
+	"sourceSize": {"w":147,"h":116}
+},
+"weapon_grenade0000":
+{
+	"frame": {"x":140,"y":146,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+},
+"weapon_homing0000":
+{
+	"frame": {"x":178,"y":6,"w":143,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":128},
+	"sourceSize": {"w":143,"h":128}
+},
+"weapon_laser0000":
+{
+	"frame": {"x":6,"y":143,"w":122,"h":149},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":122,"h":149},
+	"sourceSize": {"w":122,"h":149}
+},
+"weapon_main0000":
+{
+	"frame": {"x":280,"y":275,"w":138,"h":113},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":138,"h":113},
+	"sourceSize": {"w":138,"h":113}
+},
+"weapon_nuke0000":
+{
+	"frame": {"x":6,"y":6,"w":160,"h":125},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":160,"h":125},
+	"sourceSize": {"w":160,"h":125}
+},
+"weapon_rapidfire0000":
+{
+	"frame": {"x":6,"y":304,"w":126,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":126,"h":128},
+	"sourceSize": {"w":126,"h":128}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "18.0.0.107",
+	"image": "weapons_lazy.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1"
+}
+}

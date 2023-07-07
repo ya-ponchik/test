@@ -1,0 +1,179 @@
+﻿{"frames": {
+
+"minus_icon0000":
+{
+	"frame": {"x":891,"y":506,"w":81,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":81,"h":38},
+	"sourceSize": {"w":81,"h":38}
+},
+"modal_2_9patch0000":
+{
+	"frame": {"x":459,"y":361,"w":232,"h":247},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":232,"h":247},
+	"sourceSize": {"w":232,"h":247}
+},
+"modal_3_9patch0000":
+{
+	"frame": {"x":6,"y":744,"w":113,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":113,"h":80},
+	"sourceSize": {"w":113,"h":80}
+},
+"modal_4_9patch0000":
+{
+	"frame": {"x":843,"y":128,"w":137,"h":113},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":137,"h":113},
+	"sourceSize": {"w":137,"h":113}
+},
+"palette_icon0000":
+{
+	"frame": {"x":896,"y":708,"w":82,"h":85},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":82,"h":85},
+	"sourceSize": {"w":82,"h":85}
+},
+"particle_star0000":
+{
+	"frame": {"x":415,"y":759,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64}
+},
+"play_icon0000":
+{
+	"frame": {"x":706,"y":361,"w":170,"h":195},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":170,"h":195},
+	"sourceSize": {"w":170,"h":195}
+},
+"plus_icon0000":
+{
+	"frame": {"x":134,"y":744,"w":76,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":76,"h":80},
+	"sourceSize": {"w":76,"h":80}
+},
+"profile_card_icon0000":
+{
+	"frame": {"x":236,"y":637,"w":164,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":164,"h":110},
+	"sourceSize": {"w":164,"h":110}
+},
+"rounded_backdrop_outline_9patch0000":
+{
+	"frame": {"x":891,"y":256,"w":110,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":110,"h":110},
+	"sourceSize": {"w":110,"h":110}
+},
+"tank_barrel0000":
+{
+	"frame": {"x":6,"y":637,"w":215,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":215,"h":92},
+	"sourceSize": {"w":215,"h":92}
+},
+"tank_barrel _outline0000":
+{
+	"frame": {"x":430,"y":623,"w":243,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":243,"h":121},
+	"sourceSize": {"w":243,"h":121}
+},
+"tank_body_part_10000":
+{
+	"frame": {"x":6,"y":6,"w":467,"h":295},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":467,"h":295},
+	"sourceSize": {"w":467,"h":295}
+},
+"tank_body_part_1_00000":
+{
+	"frame": {"x":6,"y":316,"w":438,"h":153},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":438,"h":153},
+	"sourceSize": {"w":438,"h":153}
+},
+"tank_body_part_1_0_20000":
+{
+	"frame": {"x":6,"y":484,"w":409,"h":138},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":409,"h":138},
+	"sourceSize": {"w":409,"h":138}
+},
+"tank_body_part_1_0_30000":
+{
+	"frame": {"x":688,"y":708,"w":89,"h":132},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":89,"h":132},
+	"sourceSize": {"w":89,"h":132}
+},
+"tank_body_part_20000":
+{
+	"frame": {"x":706,"y":571,"w":260,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":260,"h":122},
+	"sourceSize": {"w":260,"h":122}
+},
+"tank_body_part_2_20000":
+{
+	"frame": {"x":843,"y":6,"w":147,"h":107},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":147,"h":107},
+	"sourceSize": {"w":147,"h":107}
+},
+"tank_body_part_2_30000":
+{
+	"frame": {"x":792,"y":708,"w":89,"h":107},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":89,"h":107},
+	"sourceSize": {"w":89,"h":107}
+},
+"tank_wheel0000":
+{
+	"frame": {"x":891,"y":381,"w":110,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":110,"h":110},
+	"sourceSize": {"w":110,"h":110}
+},
+"trail_icon0000":
+{
+	"frame": {"x":488,"y":6,"w":340,"h":340},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":340,"h":340},
+	"sourceSize": {"w":340,"h":340}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "18.0.0.107",
+	"image": "menu_scene_lazy.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}

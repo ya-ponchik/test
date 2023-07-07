@@ -1,0 +1,513 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+    </head>
+    <body>
+        <div id=app></div>
+        <style>body{position:fixed;inset:0;overflow:hidden!important;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;text-size-adjust:none;-webkit-touch-callout:none;cursor:default;margin:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}body,#app{height:100%}*{touch-action:none!important}*,*:before,*:after{box-sizing:border-box}
+</style>
+        <script>
+            // https://github.com/kaimallea/isMobile
+            (function () {var a={};var f=/iPhone/i,h=/iPod/i,i=/iPad/i,r=/\biOS-universal(?:.+)Mac\b/i,g=/\bAndroid(?:.+)Mobile\b/i,j=/Android/i,c=/(?:SD4930UR|\bSilk(?:.+)Mobile\b)/i,d=/Silk/i,b=/Windows Phone/i,k=/\bWindows(?:.+)ARM\b/i,m=/BlackBerry/i,n=/BB10/i,o=/Opera Mini/i,p=/\b(CriOS|Chrome)(?:.+)Mobile/i,q=/Mobile(?:.+)Firefox\b/i;function s(l){return function($){return $.test(l)}}function e(l){var $=(l=l||("undefined"!=typeof navigator?navigator.userAgent:"")).split("[FBAN");void 0!==$[1]&&(l=$[0]),void 0!==($=l.split("Twitter"))[1]&&(l=$[0]);var a=s(l),e={apple:{phone:a(f)&&!a(b),ipod:a(h),tablet:!a(f)&&a(i)&&!a(b),universal:a(r),device:(a(f)||a(h)||a(i))&&!a(b)},amazon:{phone:a(c),tablet:!a(c)&&a(d),device:a(c)||a(d)},android:{phone:!a(b)&&a(c)||!a(b)&&a(g),tablet:!a(b)&&!a(c)&&!a(g)&&(a(d)||a(j)),device:!a(b)&&(a(c)||a(d)||a(g)||a(j))||a(/\bokhttp\b/i)},windows:{phone:a(b),tablet:a(k),device:a(b)||a(k)},other:{blackberry:a(m),blackberry10:a(n),opera:a(o),firefox:a(q),chrome:a(p),device:a(m)||a(n)||a(o)||a(q)||a(p)},any:!1,phone:!1,tablet:!1};return e.any=e.apple.universal||e.apple.device||e.android.device||e.windows.device||e.other.device,e.phone=e.apple.phone||e.android.phone||e.windows.phone,e.tablet=e.apple.tablet||e.android.tablet||e.windows.tablet,e}a=e();if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=a}else if(typeof define==="function"&&define.amd){define(function(){return a})}else{this["isMobile"]=a}})();
+        </script>
+        <script type="module">
+    globalThis.lastCommit = '19498347E';
+    globalThis.buildDate = 1763847367090;
+var se={0:{mainMenu:{start_app:"\u041D\u0430\u0447\u0430\u0442\u044C",win:"\u041F\u043E\u0431\u0435\u0434\u0430",lose:"\u041F\u043E\u043C\u0435\u0440",loadingGameData:"\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430...",endedDueToUnhandledException:"\u0418\u0433\u0440\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043B\u0430\u0441\u044C \u0438\u0437-\u0437\u0430 \u0432\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0435\u0439 \u043E\u0448\u0438\u0431\u043A\u0438.",continue:"\u0414\u0410\u041B\u0415\u0415",exclamationContainer:"\u042D\u0442\u043E \u043F\u0440\u0435\u0432\u044C\u044E-\u0432\u0435\u0440\u0441\u0438\u044F \u0438\u0433\u0440\u044B. \u041E\u043D\u0430 \u043D\u0435 \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0430\u0435\u0442 \u0444\u0438\u043D\u0430\u043B\u044C\u043D\u043E\u0433\u043E \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u0430.",contextLost:"\u041E\u0448\u0438\u0431\u043A\u0430: WebGL context lost. \u041F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0438\u0433\u0440\u0443.",unimportant_asset_loading_error:"\u041E\u0448\u0438\u0431\u043A\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0438. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0441\u0446\u0435\u043D\u0443."},mainMenu_2:{no_logo:"\u041D\u0415\u0422 \u041B\u041E\u0413\u041E\u0422\u0418\u041F\u0410",btn_settings:"\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418",btn_profile:"\u041F\u0420\u041E\u0424\u0418\u041B\u042C",battle_royale_1:"\u041A\u041E\u0420\u041E\u041B\u0415\u0412\u0421\u041A\u0410\u042F",battle_royale_2:"\u0411\u0418\u0422\u0412\u0410",select_tank_color:"\u0412\u042B\u0411\u0420\u0410\u0422\u042C \u0426\u0412\u0415\u0422 \u0422\u0410\u041D\u041A\u0410",select_trail_color:"\u0412\u042B\u0411\u0420\u0410\u0422\u042C \u0426\u0412\u0415\u0422 \u0421\u041B\u0415\u0414\u0410",get_new_color:"\u041F\u041E\u041B\u0423\u0427\u0418\u0422\u042C \u041D\u041E\u0412\u042B\u0419 \u0426\u0412\u0415\u0422",bonus:"\u0411\u041E\u041D\u0423\u0421!",bonus_amount:"100",minutes_short:" \u043C.",seconds_short:" \u0441.",color_cost_1:"75",color_cost_2:"150",color_cost_3:"225",color_cost_4:"340",color_cost_5:"500",color_cost_6:"750",color_cost_7:"1000",color_cost_8:"1500"},dialog_profile:{solo_games:"\u0412\u0441\u0435\u0433\u043E \u0438\u0433\u0440:",solo_wins:"\u041F\u043E\u0431\u0435\u0434:",total_kills:"\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0435\u043D\u043E \u0442\u0430\u043D\u043A\u043E\u0432:",missiles_fired:"\u0412\u044B\u0441\u0442\u0440\u0435\u043B\u044B (\u043E\u0441\u043D. \u043E\u0440\u0443\u0436\u0438\u0435):",distance_driven:"\u041F\u0440\u043E\u0435\u0445\u0430\u043B (\u043A\u043C):",crates_collected:"\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u043D\u043E \u043F\u0440\u0438\u043F\u0430\u0441\u043E\u0432:",deaths:"\u041F\u043E\u0440\u0430\u0436\u0435\u043D\u0438\u0439:",longest_killstreak:"\u041B\u0443\u0447\u0448\u0430\u044F \u0441\u0435\u0440\u0438\u044F:",money_earned:"\u0417\u0430\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043E \u043C\u043E\u043D\u0435\u0442:"},dialog_gear_up_1:{gear_up:"\u0413\u041E\u0422\u041E\u0412\u042C\u0421\u042F!"},dialog_gear_up_2:{play:"\u0418\u0413\u0420\u0410\u0422\u042C",buy_n_play:"\u041A\u0423\u041F\u0418\u0422\u042C \u0418 \u0418\u0413\u0420\u0410\u0422\u042C",weapon_nuke:"\u0421\u0423\u041F\u0415\u0420\u0417\u0410\u0420\u042F\u0414",weapon_laser:"\u041B\u0410\u0417\u0415\u0420",weapon_grenade:"\u0413\u0420\u0410\u041D\u0410\u0422\u0410",weapon_shield:"\u0429\u0418\u0422",weapon_rapidfire:"\u0417\u0410\u041B\u041F",weapon_drill:"\u0421\u0412\u0415\u0420\u041B\u041E",weapon_homing:"\u0418\u0421\u041A\u0410\u0422\u0415\u041B\u042C",perk_health:"+20 % \u0417\u0414\u041E\u0420\u041E\u0412\u042C\u042F",perk_speed:"+30 % \u0421\u041A\u041E\u0420\u041E\u0421\u0422\u0418",perk_ammo:"+1 \u0417\u0410\u0420\u042F\u0414",type_1:"\u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442",type_2:"\u0431\u043E\u043D\u0443\u0441",test_cost:"200",your_arsenal:"\u041A \u041F\u041E\u041A\u0423\u041F\u041A\u0415:",x1:"x1",x2:"x2",x3:"x3",x4:"x4",x5:"x5"},dialog_settings:{sound:"\u0437\u0432\u0443\u043A",music:"\u043C\u0443\u0437\u044B\u043A\u0430",touchscreen_mode:"\u0441\u0435\u043D\u0441\u043E\u0440\u043D\u043E\u0435 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435",tutorial:"\u041E\u0411\u0423\u0427\u0415\u041D\u0418\u0415",exit_match:"\u0412\u042B\u0419\u0422\u0418 \u0412 \u041C\u0415\u041D\u042E",attribution_1:"\u041C\u0443\u0437\u044B\u043A\u0430 \u043F\u043E \u043B\u0438\u0446\u0435\u043D\u0437\u0438\u0438 CC-BY 4.0",attribution_2:"scottbuckley.com.au"},levels:{},game:{temp_you:"\u0412\u044B",bot_names:["\u0427\u0438\u0442\u0435\u0440","\u0411\u043E\u0442","\u0422\u0430\u0449\u0435\u0440","\u0423\u043C\u0435\u043B\u044B\u0439","\u0412\u0435\u0442\u0435\u0440\u0430\u043D","\u0421\u043D\u0430\u0439\u043F\u0435\u0440","\u041D\u0430\u0451\u043C\u043D\u0438\u043A","\u0411\u0435\u0440\u0441\u0435\u0440\u043A","\u0412\u0430\u0440\u044F\u0433","\u0412\u0430\u043D\u043F\u0430\u043D\u0447\u043C\u0435\u043D","\u0421\u043A\u0443\u0444","\u0414\u0436\u0430\u043C\u0431\u043E","\u041A\u0440\u0435\u043C\u0435\u043D\u044C","\u0410\u0440\u0442\u0438\u043B\u043B\u0435\u0440\u0438\u0441\u0442","\u0421\u0442\u0440\u0435\u043B\u043E\u043A","\u0428\u0443\u0441\u0442\u0440\u0438\u043B\u0430","\u041B\u0435\u0432\u0448\u0430","\u0418\u043C\u0431\u0430","\u0411\u043E\u0435\u0446","\u0427\u0435\u043C\u043F\u0438\u043E\u043D","\u0411\u0430\u043D\u0434\u0438\u0442","\u0413\u0430\u043D\u0433\u0441\u0442\u0435\u0440","\u0411\u0435\u0441","\u041A\u043E\u043B\u043E\u0431\u043E\u043A","\u041A\u0438\u043B\u043B\u0435\u0440","\u0421\u0443\u0435\u0442\u043E\u043B\u043E\u0433","\u041C\u043E\u0431\u0438\u043A","\u0420\u044D\u043C\u0431\u043E","\u0421\u043A\u0430\u043B\u0430","\u0410\u0441\u0441\u0430\u0441\u0438\u043D","\u041D\u0438\u043D\u0434\u0437\u044F","\u041A\u0430\u0440\u0430\u0442\u0435\u043B\u044C","\u0421\u0442\u0440\u0430\u0442\u0435\u0433","\u0421\u043C\u0435\u0448\u0430\u0440\u0438\u043A","\u041E\u0445\u043E\u0442\u043D\u0438\u043A","\u041A\u0438\u0431\u043E\u0440\u0433"],tanksRemaining:"\u0422\u0430\u043D\u043A\u043E\u0432 \u0432 \u0436\u0438\u0432\u044B\u0445:",inventoryFull:"\u0418\u043D\u0432\u0435\u043D\u0442\u0430\u0440\u044C \u043F\u043E\u043B\u043E\u043D!",results:"\u0421\u0422\u0410\u0422\u0418\u0421\u0422\u0418\u041A\u0410",placed:"\u041F\u043E\u0437\u0438\u0446\u0438\u044F:",of:"\u0438\u0437",kills:"\u0423\u0431\u0438\u0439\u0441\u0442\u0432:",total:"\u0418\u0442\u043E\u0433\u043E:",killTypes:{two_birds_one_stone:"\u0414\u0412\u0423\u0425 \u0417\u0410\u0419\u0426\u0415\u0412 \u041E\u0414\u041D\u0418\u041C \u0412\u042B\u0421\u0422\u0420\u0415\u041B\u041E\u041C!",long_shot:"\u0421\u041D\u0410\u0419\u041F\u0415\u0420!",yard_sale:"\u042F\u0420\u041C\u0410\u0420\u041A\u0410 \u0429\u0415\u0414\u0420\u041E\u0421\u0422\u0418!",dunk_tank:"\u0417\u0410\u041C\u041E\u0427\u0418\u041B!",assist:"\u041F\u041E\u041C\u041E\u0429\u042C!",first_blood:"\u041F\u0415\u0420\u0412\u0410\u042F \u041A\u0420\u041E\u0412\u042C!",double_kill:"\u0414\u0412\u041E\u0419\u041D\u041E\u0415 \u0423\u0411\u0418\u0419\u0421\u0422\u0412\u041E!",triple_kill:"\u0422\u0420\u041E\u0419\u041D\u041E\u0415 \u0423\u0411\u0418\u0419\u0421\u0422\u0412\u041E!",quad_kill:"\u0427\u0415\u0422\u0412\u0415\u0420\u041D\u041E\u0415 \u0423\u0411\u0418\u0419\u0421\u0422\u0412\u041E!"},triple_reward_1:"\u0422\u0420\u041E\u0419\u041D\u0410\u042F",triple_reward_2:"\u041D\u0410\u0413\u0420\u0410\u0414\u0410!"},battle_begins:{battle_begins:"\u0423\u0434\u0430\u0447\u043D\u043E\u0439 \u043E\u0445\u043E\u0442\u044B!"},tutorial:{msg1:"\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435 ",msg1_1:"/",msg1_2:" \u0434\u043B\u044F \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F",msg1_3:"\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435 \u043F\u0435\u0434\u0430\u043B\u0438 \u0434\u043B\u044F \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F",msg2:"\u041E\u0441\u0442\u0435\u0440\u0435\u0433\u0430\u0439\u0442\u0435\u0441\u044C \u0432\u043E\u0434\u044B!",msg3:"\u041A\u043B\u0438\u043A\u0430\u0439\u0442\u0435, \u0447\u0442\u043E\u0431\u044B \u0441\u0442\u0440\u0435\u043B\u044F\u0442\u044C",msg4:"\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u044C\u0442\u0435 \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u0442\u0430\u043D\u043A!",msg5:"\u0412\u044B\u0441\u0442\u0440\u0435\u043B \u043F\u043E\u0434 \u0441\u0435\u0431\u044F \u043F\u043E\u0434\u0431\u0440\u0430\u0441\u044B\u0432\u0430\u0435\u0442 \u0432\u0430\u0441",msg6:"\u0421\u043E\u0431\u0438\u0440\u0430\u0439\u0442\u0435 \u0440\u0430\u0437\u0431\u0440\u043E\u0441\u0430\u043D\u043D\u044B\u0435 \u043D\u0430 \u0443\u0440\u043E\u0432\u043D\u0435 \u043F\u0440\u0438\u043F\u0430\u0441\u044B",msg7:"\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435 ",msg7_2:" \u0434\u043B\u044F \u0441\u043C\u0435\u043D\u044B \u043E\u0440\u0443\u0436\u0438\u044F",msg8:"\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u044C\u0442\u0435 \u0432\u0440\u0430\u0436\u0435\u0441\u043A\u0438\u0439 \u0442\u0430\u043D\u043A \u043D\u0430 \u043E\u0441\u0442\u0440\u043E\u0432\u043A\u0435 \u0441\u043F\u0440\u0430\u0432\u0430"},tutorial_keys:{left:"A",right:"D",weapon_select:"Shift"}},1:{mainMenu:{start_app:"Start",win:"Victory",lose:"Wasted",loadingGameData:"Loading...",endedDueToUnhandledException:"The game is ended due to internal error.",continue:"CONTINUE",exclamationContainer:"Preview version of game. Doesn't show final quality.",contextLost:"Error: WebGL context lost. Reload the game.",unimportant_asset_loading_error:"Loading error. Please restart the scene."},mainMenu_2:{no_logo:"NO LOGOTYPE",btn_settings:"SETTINGS",btn_profile:"PROFILE",battle_royale_1:"BATTLE",battle_royale_2:"ROYALE",select_tank_color:"SELECT TANK COLOR",select_trail_color:"SELECT TRAIL COLOR",get_new_color:"GET NEW COLOR",bonus:"BONUS!",bonus_amount:"100",minutes_short:"m",seconds_short:"s",color_cost_1:"75",color_cost_2:"150",color_cost_3:"225",color_cost_4:"340",color_cost_5:"500",color_cost_6:"750",color_cost_7:"1000",color_cost_8:"1500"},dialog_profile:{solo_games:"Games Played:",solo_wins:"Wins:",total_kills:"Tanks Destroyed:",missiles_fired:"Shots (Main Missile):",distance_driven:"Distance Driven (km):",crates_collected:"Crates Collected:",deaths:"Defeats:",longest_killstreak:"Best Streak:",money_earned:"Money Earned:"},dialog_gear_up_1:{gear_up:"GEAR UP!"},dialog_gear_up_2:{play:"PLAY",buy_n_play:"BUY AND PLAY",weapon_nuke:"NUKE",weapon_laser:"LASER",weapon_grenade:"GRENADE",weapon_shield:"SHIELD",weapon_rapidfire:"RAPIFIRE",weapon_drill:"DRILL",weapon_homing:"HOMING",perk_health:"+20% HEALTH",perk_speed:"+30% SPEED",perk_ammo:"+1 AMMO",type_1:"hand tool",type_2:"bonus",test_cost:"200",your_arsenal:"FOR BUY:",x1:"x1",x2:"x2",x3:"x3",x4:"x4",x5:"x5"},dialog_settings:{sound:"sound",music:"music",touchscreen_mode:"touchscreen mode",tutorial:"TUTORIAL",exit_match:"EXIT MATCH",attribution_1:"Music released under CC-BY 4.0",attribution_2:"scottbuckley.com.au"},levels:{},game:{temp_you:"You",bot_names:["Cheater","Bot","Gamer","Skillful","Old-timer","Sniper","Mercenary","Berserk","Varangian","Onepunchman","Skuf","Jambo","Stable","Artilleryman","Rifleman","Flash","Left-handed","OP","Warrior","Champion","Bandit","Gangster","Demon","Kolobok","Killer","Fussy","Mobilized","Rambo","The rock","Assassin","Ninja","Punisher","Strategist","Smesharik","Hunter","Cyborg"],tanksRemaining:"Tanks remaining:",inventoryFull:"Inventory Full!",results:"RESULTS",placed:"Placed:",of:"of",kills:"Kills:",total:"Total:",killTypes:{two_birds_one_stone:"TWO BIRDS ONE STONE!",long_shot:"LONG SHOT!",yard_sale:"YARD SALE!",dunk_tank:"DUNK TANK!",assist:"ASSIST!",first_blood:"FIRST BLOOD!",double_kill:"DOUBLE KILL!",triple_kill:"TRIPLE KILL!",quad_kill:"QUAD KILL!"},triple_reward_1:"TRIPLE",triple_reward_2:"REWARD!"},battle_begins:{battle_begins:"Happy hunting!"},tutorial:{msg1:"Use ",msg1_1:"/",msg1_2:" to move",msg1_3:"Use pedals to move",msg2:"Avoid the water!",msg3:"Click to shoot",msg4:"Eliminate an enemy tank!",msg5:"Shoot the ground to jump",msg6:"Collect supplies scattered around the map",msg7:"Use ",msg7_2:" to cycle through available weapons",msg8:"Take out the last tank (right side island)"},tutorial_keys:{left:"A",right:"D",weapon_select:"Shift"}}};document.body.addEventListener("keydown",o=>{o.code==="Escape"&&o.preventDefault()});document.addEventListener("dblclick",o=>{o.preventDefault()});document.addEventListener("contextmenu",o=>(o.preventDefault(),!1));var me=[{path:"./resources/sound/engine_loop.mp3",settings:{loop:!0}},{path:"./resources/sound/new_explosion_3.wav",settings:{max_distance:42}},{path:"./resources/sound/new_no_postfx_shot_1.wav",settings:{max_distance:30}},{path:"./resources/sound/water_1.mp3",settings:{max_distance:30}},{path:"./resources/sound/water_2.mp3",settings:{max_distance:30}},{path:"./resources/sound/nuke_drop.mp3",settings:{max_distance:52}},{path:"./resources/sound/nuke_charge.mp3",settings:{max_distance:30}},{path:"./resources/sound/nuke_shot.mp3",settings:{max_distance:30}},{path:"./resources/sound/laser_beam.mp3",settings:{max_distance:30}},{path:"./resources/sound/laser_shot.mp3",settings:{max_distance:30}},{path:"./resources/sound/shield.mp3",settings:{max_distance:35}},{path:"./resources/sound/shot_2.mp3",settings:{max_distance:30}},{path:"./resources/sound/sonic_boom.mp3",settings:{max_distance:35}},{path:"./resources/sound/drill.mp3",settings:{max_distance:35,loop:!0}},{path:"./resources/sound/ding.mp3",settings:{volume:.25}},{path:"./resources/sound/lose.mp3",settings:{volume:.39}},{path:"./resources/sound/win.mp3",settings:{}},{path:"./resources/sound/white_noise.mp3",settings:{max_distance:40,loop:!0,volume:.08}}];var B,te,_e,je=new Map,le=new Map,Tt=0;function Dn(o,i,n){let l=n.listener;try{l.positionX.value=o,l.positionY.value=i,l.positionZ.value=-1,l.forwardX.value=0,l.forwardY.value=0,l.forwardZ.value=-1,l.upX.value=0,l.upY.value=1,l.upZ.value=0}catch{l.setPosition(o,i,-1),l.setOrientation(0,0,-1,0,1,0)}}async function Cn(o,i,n){let l=await fetch(o,{signal:n.signal});if(l.ok===!1)throw new Error(`Failed to fetch ${o}: response.ok === false`);let _=await l.arrayBuffer(),b=await i.decodeAudioData(_);if(n.signal.aborted)throw new Error("Failed to load sound: aborted");return b}async function Tn(o){let i=await Cn(me[o].path,B,_e);je.set(o,i)}function Fn(o){let i,n=o.ctx.createBufferSource();n.buffer=o.buf,n.loop=o.loop??!1;let l=n;if(typeof o.spatial<"u"&&(i=new PannerNode(o.ctx,{panningModel:"equalpower",distanceModel:"linear",positionX:o.spatial.x,positionY:o.spatial.y,positionZ:-15,orientationX:0,orientationY:0,orientationZ:1,refDistance:0,maxDistance:o.spatial.max_distance,rolloffFactor:1,coneInnerAngle:360,coneOuterAngle:360,coneOuterGain:0}),l.connect(i),l=i),typeof o.volume<"u"){let b=o.ctx.createGain();b.gain.setValueAtTime(o.volume,o.ctx.currentTime),l.connect(b),l=b}l.connect(o.global_gain),n.start();let _=()=>{n.stop(),n.stop(),n.removeEventListener("ended",_),o.signal.removeEventListener("abort",_),l.disconnect(),o.onended?.()};return n.addEventListener("ended",_),o.signal.addEventListener("abort",_),{audio_node:n,panner_node:i}}function Ln(o){let i=Tt;++Tt;let n=()=>{le.delete(i)},l=Fn({...o,ctx:B,global_gain:te,signal:_e.signal,onended:n});return le.set(i,l),i}function Sn(o){let i=le.get(o);typeof i>"u"||i.audio_node.stop()}function Mn(o,i,n){let l=le.get(o);typeof l>"u"||typeof l.panner_node<"u"&&(l.panner_node.positionX.value=i,l.panner_node.positionY.value=n)}function Ft(){return B=new AudioContext,te=B.createGain(),te.connect(B.destination),_e=new AbortController,Promise.all([...me.keys()].map(o=>Tn(o)))}function Lt(o,i){Dn(o,i,B)}function St(o){te&&te.gain.setValueAtTime(o,B.currentTime)}function Ye(o,i,n){let l=je.get(o);if(typeof l>"u")return-1;let _=me[o].settings;return Ln({buf:l,loop:_.loop,volume:_.volume,spatial:typeof _.max_distance<"u"?{x:i,y:n,max_distance:_.max_distance}:void 0})}function Mt(o,i){let n=le.get(o);typeof n>"u"||(n.audio_node.playbackRate.value=i)}function Pt(o,i,n){Mn(o,i,n)}function Xe(o){Sn(o)}function Rt(){_e?.abort(),B?.close(),te?.disconnect(),je.clear()}var Ke=-1,O={init_1(){return Ft()},play(o,i,n){return Ye(o,i,n)},end(o){Xe(o)},update(o,i){Lt(o,i)},set_global_volume(o){St(o)},update_2(o){Mt(Ke,o)},update_3(o,i,n){Pt(o,i,n)},start(){Ke=Ye(0,0,0)},stop_1(){Rt()},stop_2(){Xe(Ke)}};var qt=!0,re=class{#e;#t;constructor(i,n,l,_){let b=i.now()*1e3,x=0,m=!1;this.#e=setInterval(()=>{qt&&document.visibilityState=="hidden"&&v.call(this,i.now()*1e3)},20),this.#t=i.frame(({time:p})=>{let C=p*1e3;v.call(this,C)});function v(p){let C=p-b;for(b=p,qt||(C=Math.min(C,200)),x+=C;x>=n;)l(),m=!0,x-=n;m&&document.visibilityState=="visible"&&_(p,C,x/n)}}stop(){this.#t.cancel(),clearInterval(this.#e)}};function Ze(o){let i=0,n=0;for(let m of o)i+=m.w*m.h,n=Math.max(n,m.w);o.sort((m,v)=>v.h-m.h);let _=[{x:0,y:0,w:Math.max(Math.ceil(Math.sqrt(i/.95)),n),h:1/0}],b=0,x=0;for(let m of o)for(let v=_.length-1;v>=0;v--){let p=_[v];if(!(m.w>p.w||m.h>p.h)){if(m.x=p.x,m.y=p.y,x=Math.max(x,m.y+m.h),b=Math.max(b,m.x+m.w),m.w===p.w&&m.h===p.h){let C=_.pop();v<_.length&&(_[v]=C)}else m.h===p.h?(p.x+=m.w,p.w-=m.w):m.w===p.w?(p.y+=m.h,p.h-=m.h):(_.push({x:p.x+m.w,y:p.y,w:p.w-m.w,h:m.h}),p.y+=m.h,p.h-=m.h);break}}return{w:b,h:x,fill:i/(b*x)||0}}function Ot(o,i){function n(l){for(let _=1;_<17;++_)if(2**_>=l)return 2**_;return 2}return Math.max(n(o),n(i))}function It(o,i=!1){return new Promise((n,l)=>{let _=document.createElement("script");_.onload=()=>{n(_)},_.onerror=()=>{l(new Error("111"))},i&&(_.type="module"),_.src=o,_.async=!0,document.body.append(_)})}var Wt=navigator.userAgent.toLowerCase().includes("firefox");function ve(){let o=globalThis.isMobile;return o.phone||o.tablet}var Gt=!!navigator?.userAgentData?.brands.some(o=>o.brand==="Chromium"),pe=class{#e=document.createElement("canvas");#t=this.#e.getContext("2d",{alpha:!0,desynchronized:!1,willReadFrequently:!1});constructor(){}pack(i,n=1.5,l=0){let _=1,b=1;l===0&&(Gt?(_=.82,b=.89):(_=.75,b=.8)),l===1&&(Gt?(_=.65,b=.72):(_=.6,b=.6));let x=30*n,m=8*n,v=this.#t;v.save(),this.#r(m*_,l===2),this.#o(x);let p=6*n,C=10*n,W=9*n,F=i.map((L,z)=>{let A=v.measureText(L).width+m+p,y=x+m+C+W;return{w:A,h:y,idx:z,x:0,y:0}});v.restore();let{w:G,h:N,fill:K}=Ze(F);this.#e.width=this.#e.height=Ot(G,N),v.save(),this.#r(m*_,l===2),this.#o(x),v.shadowColor="black",v.shadowOffsetY=2.67*n*b,l===2&&(v.shadowColor="transparent",v.shadowOffsetY=0);for(let L of F){let{x:z,y:w,idx:A}=L,y=z+m/2+p/2,P=w+x+m;v.strokeText(i[A],y,P)}v.shadowColor="transparent",v.shadowOffsetY=0;for(let L of F){let{x:z,y:w,idx:A}=L,y=z+m/2+p/2,P=w+x+m;v.fillText(i[A],y,P),L.x+=2,L.y+=2,L.w-=2,L.h-=2}return v.restore(),F}canvas(){return this.#e}cleanup(){this.#e.width=0,this.#e.height=0}#r(i,n=!1){let l=this.#t;l.lineWidth=i,l.lineJoin="round",l.strokeStyle="black",l.fillStyle="white",n&&(l.lineWidth=0,l.strokeStyle="transparent")}#o(i){let n=this.#t;n.font="bold "+i+"px sans-serif",n.direction="ltr",n.textAlign="left",n.fontKerning="normal",n.textRendering="optimizeLegibility"}};async function Pn(o={}){var i,n=o,l=!0,_=!1,b=(e,t)=>{throw t},x=import.meta.url,m="";function v(e){return m+e}var p,C;if(l||_){try{m=new URL(".",x).href}catch{}p=async e=>{var t=await fetch(e,{credentials:"same-origin"});if(t.ok)return t.arrayBuffer();throw new Error(t.status+" : "+t.url)}}var W=console.log.bind(console),F=console.error.bind(console),G,N=!1,K,L,z,w,A,y,P,Z,$,T,ct,Oe,ue,ut,ft=!1;function Ir(){var e=w.buffer;n.HEAP8=A=new Int8Array(e),P=new Int16Array(e),y=new Uint8Array(e),Z=new Uint16Array(e),$=new Int32Array(e),T=new Uint32Array(e),ct=new Float32Array(e),Oe=new Float64Array(e),ue=new BigInt64Array(e),ut=new BigUint64Array(e)}function za(){}function Wr(){ft=!0,Q.H()}function ya(){}function wa(){}var ae=0,ie=null;function Gr(e){ae++}function Nr(e){if(ae--,ae==0&&ie){var t=ie;ie=null,t()}}function Ie(e){e="Aborted("+e+")",F(e),N=!0,e+=". Build with -sASSERTIONS for more info.";var t=new WebAssembly.RuntimeError(e);throw z?.(t),t}var dt;function Ur(){return n.locateFile?v("wasm_module.wasm"):new URL("wasm_module.wasm",import.meta.url).href}function Hr(e){if(C)return C(e);throw"both async and sync fetching of the wasm failed"}async function Br(e){if(!G)try{var t=await p(e);return new Uint8Array(t)}catch{}return Hr(e)}async function Vr(e,t){try{var r=await Br(e),a=await WebAssembly.instantiate(r,t);return a}catch(s){F(`failed to asynchronously prepare wasm: ${s}`),Ie(s)}}async function $r(e,t,r){if(!e)try{var a=fetch(t,{credentials:"same-origin"}),s=await WebAssembly.instantiateStreaming(a,r);return s}catch(c){F(`wasm streaming compile failed: ${c}`),F("falling back to ArrayBuffer instantiation")}return Vr(t,r)}function jr(){return{a:En}}async function Yr(){function e(c,d){return Q=c.exports,w=Q.G,Ir(),zt=Q.I,xn(Q),Nr("wasm-instantiate"),Q}Gr("wasm-instantiate");function t(c){return e(c.instance)}var r=jr();dt??=Ur();var a=await $r(G,dt,r),s=t(a);return s}class mt{name="ExitStatus";constructor(t){this.message=`Program terminated with exit(${t})`,this.status=t}}var Xr=()=>Ie(""),R=e=>{for(var t="";;){var r=y[e++];if(!r)return t;t+=String.fromCharCode(r)}},J={},j={},fe={},Kr=class extends Error{constructor(t){super(t),this.name="BindingError"}},M=e=>{throw new Kr(e)};function Zr(e,t,r={}){var a=t.name;if(e||M(`type "${a}" must have a positive integer typeid pointer`),j.hasOwnProperty(e)){if(r.ignoreDuplicateRegistrations)return;M(`Cannot register type '${a}' twice`)}if(j[e]=t,delete fe[e],J.hasOwnProperty(e)){var s=J[e];delete J[e],s.forEach(c=>c())}}function q(e,t,r={}){return Zr(e,t,r)}var _t=(e,t,r)=>{switch(t){case 1:return r?a=>A[a]:a=>y[a];case 2:return r?a=>P[a>>1]:a=>Z[a>>1];case 4:return r?a=>$[a>>2]:a=>T[a>>2];case 8:return r?a=>ue[a>>3]:a=>ut[a>>3];default:throw new TypeError(`invalid integer width (${t}): ${e}`)}},Jr=(e,t,r,a,s)=>{t=R(t);let c=a===0n,d=u=>u;if(c){let u=r*8;d=f=>BigInt.asUintN(u,f),s=d(s)}q(e,{name:t,fromWireType:d,toWireType:(u,f)=>(typeof f=="number"&&(f=BigInt(f)),f),readValueFromPointer:_t(t,r,!c),destructorFunction:null})},Qr=(e,t,r,a)=>{t=R(t),q(e,{name:t,fromWireType:function(s){return!!s},toWireType:function(s,c){return c?r:a},readValueFromPointer:function(s){return this.fromWireType(y[s])},destructorFunction:null})},vt=[],Y=[0,1,,1,null,1,!0,1,!1,1],We=e=>{e>9&&--Y[e+1]===0&&(Y[e]=void 0,vt.push(e))},k={toValue:e=>(e||M(`Cannot use deleted val. handle = ${e}`),Y[e]),toHandle:e=>{switch(e){case void 0:return 2;case null:return 4;case!0:return 6;case!1:return 8;default:{let t=vt.pop()||Y.length;return Y[t]=e,Y[t+1]=1,t}}}};function Ge(e){return this.fromWireType(T[e>>2])}var eo={name:"emscripten::val",fromWireType:e=>{var t=k.toValue(e);return We(e),t},toWireType:(e,t)=>k.toHandle(t),readValueFromPointer:Ge,destructorFunction:null},to=e=>q(e,eo),ro=(e,t)=>{switch(t){case 4:return function(r){return this.fromWireType(ct[r>>2])};case 8:return function(r){return this.fromWireType(Oe[r>>3])};default:throw new TypeError(`invalid float width (${t}): ${e}`)}},oo=(e,t,r)=>{t=R(t),q(e,{name:t,fromWireType:a=>a,toWireType:(a,s)=>s,readValueFromPointer:ro(t,r),destructorFunction:null})},pt=(e,t)=>Object.defineProperty(t,"name",{value:e}),gt=e=>{for(;e.length;){var t=e.pop(),r=e.pop();r(t)}};function ht(e){for(var t=1;t<e.length;++t)if(e[t]!==null&&e[t].destructorFunction===void 0)return!0;return!1}function no(e,t,r,a){var s=ht(e),c=e.length-2,d=[],u=["fn"];t&&u.push("thisWired");for(var f=0;f<c;++f)d.push(`arg${f}`),u.push(`arg${f}Wired`);d=d.join(","),u=u.join(",");var g=`return function (${d}) {
+`;s&&(g+=`var destructors = [];
+`);var E=s?"destructors":"null",U=["humanName","throwBindingError","invoker","fn","runDestructors","fromRetWire","toClassParamWire"];t&&(g+=`var thisWired = toClassParamWire(${E}, this);
+`);for(var f=0;f<c;++f){var H=`toArg${f}Wire`;g+=`var arg${f}Wired = ${H}(${E}, arg${f});
+`,U.push(H)}if(g+=(r||a?"var rv = ":"")+`invoker(${u});
+`,s)g+=`runDestructors(destructors);
+`;else for(var f=t?1:2;f<e.length;++f){var D=f===1?"thisWired":"arg"+(f-2)+"Wired";e[f].destructorFunction!==null&&(g+=`${D}_dtor(${D});
+`,U.push(`${D}_dtor`))}return r&&(g+=`var ret = fromRetWire(rv);
+return ret;
+`),g+=`}
+`,new Function(U,g)}function ao(e,t,r,a,s,c){var d=t.length;d<2&&M("argTypes array size mismatch! Must at least get return value and 'this' types!");for(var u=t[1]!==null&&r!==null,f=ht(t),g=!t[0].isVoid,E=t[0],U=t[1],H=[e,M,a,s,gt,E.fromWireType.bind(E),U?.toWireType.bind(U)],D=2;D<d;++D){var ee=t[D];H.push(ee.toWireType.bind(ee))}if(!f)for(var D=u?1:2;D<t.length;++D)t[D].destructorFunction!==null&&H.push(t[D].destructorFunction);var kn=no(t,u,g,c)(...H);return pt(e,kn)}var io=(e,t,r)=>{if(e[t].overloadTable===void 0){var a=e[t];e[t]=function(...s){return e[t].overloadTable.hasOwnProperty(s.length)||M(`Function '${r}' called with an invalid number of arguments (${s.length}) - expects one of (${e[t].overloadTable})!`),e[t].overloadTable[s.length].apply(this,s)},e[t].overloadTable=[],e[t].overloadTable[a.argCount]=a}},so=(e,t,r)=>{n.hasOwnProperty(e)?((r===void 0||n[e].overloadTable!==void 0&&n[e].overloadTable[r]!==void 0)&&M(`Cannot register public name '${e}' twice`),io(n,e,e),n[e].overloadTable.hasOwnProperty(r)&&M(`Cannot register multiple overloads of a function with the same number of arguments (${r})!`),n[e].overloadTable[r]=t):(n[e]=t,n[e].argCount=r)},lo=(e,t)=>{for(var r=[],a=0;a<e;a++)r.push(T[t+a*4>>2]);return r},co=class extends Error{constructor(t){super(t),this.name="InternalError"}},bt=e=>{throw new co(e)},uo=(e,t,r)=>{n.hasOwnProperty(e)||bt("Replacing nonexistent public symbol"),n[e].overloadTable!==void 0&&r!==void 0?n[e].overloadTable[r]=t:(n[e]=t,n[e].argCount=r)},zt,fo=e=>zt.get(e),mo=(e,t,r=!1)=>{e=R(e);function a(){var c=fo(t);return c}var s=a();return typeof s!="function"&&M(`unknown function pointer with signature ${e}: ${t}`),s};class _o extends Error{}var yt=e=>{var t=Ct(e),r=R(t);return I(t),r},vo=(e,t)=>{var r=[],a={};function s(c){if(!a[c]&&!j[c]){if(fe[c]){fe[c].forEach(s);return}r.push(c),a[c]=!0}}throw t.forEach(s),new _o(`${e}: `+r.map(yt).join([", "]))},po=(e,t,r)=>{e.forEach(u=>fe[u]=t);function a(u){var f=r(u);f.length!==e.length&&bt("Mismatched type converter count");for(var g=0;g<e.length;++g)q(e[g],f[g])}var s=new Array(t.length),c=[],d=0;t.forEach((u,f)=>{j.hasOwnProperty(u)?s[f]=j[u]:(c.push(u),J.hasOwnProperty(u)||(J[u]=[]),J[u].push(()=>{s[f]=j[u],++d,d===c.length&&a(s)}))}),c.length===0&&a(s)},go=e=>{e=e.trim();let t=e.indexOf("(");return t===-1?e:e.slice(0,t)},ho=(e,t,r,a,s,c,d,u)=>{var f=lo(t,r);e=R(e),e=go(e),s=mo(a,s,d),so(e,function(){vo(`Cannot call ${e} due to unbound types`,f)},t-1),po([],f,g=>{var E=[g[0],null].concat(g.slice(1));return uo(e,ao(e,E,null,s,c,d),t-1),[]})},bo=(e,t,r,a,s)=>{t=R(t);let c=a===0,d=f=>f;if(c){var u=32-8*r;d=f=>f<<u>>>u,s=d(s)}q(e,{name:t,fromWireType:d,toWireType:(f,g)=>g,readValueFromPointer:_t(t,r,a!==0),destructorFunction:null})},zo=(e,t,r)=>{var a=[Int8Array,Uint8Array,Int16Array,Uint16Array,Int32Array,Uint32Array,Float32Array,Float64Array,BigInt64Array,BigUint64Array],s=a[t];function c(d){var u=T[d>>2],f=T[d+4>>2];return new s(A.buffer,f,u)}r=R(r),q(e,{name:r,fromWireType:c,readValueFromPointer:c},{ignoreDuplicateRegistrations:!0})},yo=(e,t,r,a)=>{if(!(a>0))return 0;for(var s=r,c=r+a-1,d=0;d<e.length;++d){var u=e.codePointAt(d);if(u<=127){if(r>=c)break;t[r++]=u}else if(u<=2047){if(r+1>=c)break;t[r++]=192|u>>6,t[r++]=128|u&63}else if(u<=65535){if(r+2>=c)break;t[r++]=224|u>>12,t[r++]=128|u>>6&63,t[r++]=128|u&63}else{if(r+3>=c)break;t[r++]=240|u>>18,t[r++]=128|u>>12&63,t[r++]=128|u>>6&63,t[r++]=128|u&63,d++}}return t[r]=0,r-s},wo=(e,t,r)=>yo(e,y,t,r),xo=e=>{for(var t=0,r=0;r<e.length;++r){var a=e.charCodeAt(r);a<=127?t++:a<=2047?t+=2:a>=55296&&a<=57343?(t+=4,++r):t+=3}return t},wt=new TextDecoder,Ne=(e,t,r,a)=>{var s=t+r;if(a)return s;for(;e[t]&&!(t>=s);)++t;return t},Eo=(e,t,r)=>{if(!e)return"";var a=Ne(y,e,t,r);return wt.decode(y.subarray(e,a))},Ao=(e,t)=>{t=R(t);var r=!0;q(e,{name:t,fromWireType(a){var s=T[a>>2],c=a+4,d;if(r)d=Eo(c,s,!0);else{d="";for(var u=0;u<s;++u)d+=String.fromCharCode(y[c+u])}return I(a),d},toWireType(a,s){s instanceof ArrayBuffer&&(s=new Uint8Array(s));var c,d=typeof s=="string";d||ArrayBuffer.isView(s)&&s.BYTES_PER_ELEMENT==1||M("Cannot pass non-string to std::string"),r&&d?c=xo(s):c=s.length;var u=Be(4+c+1),f=u+4;if(T[u>>2]=c,d)if(r)wo(s,f,c+1);else for(var g=0;g<c;++g){var E=s.charCodeAt(g);E>255&&(I(u),M("String has UTF-16 code units that do not fit in 8 bits")),y[f+g]=E}else y.set(s,f);return a!==null&&a.push(I,u),u},readValueFromPointer:Ge,destructorFunction(a){I(a)}})},ko=new TextDecoder("utf-16le"),Do=(e,t,r)=>{var a=e>>1,s=Ne(Z,a,t/2,r);return ko.decode(Z.subarray(a,s))},Co=(e,t,r)=>{if(r??=2147483647,r<2)return 0;r-=2;for(var a=t,s=r<e.length*2?r/2:e.length,c=0;c<s;++c){var d=e.charCodeAt(c);P[t>>1]=d,t+=2}return P[t>>1]=0,t-a},To=e=>e.length*2,Fo=(e,t,r)=>{for(var a="",s=e>>2,c=0;!(c>=t/4);c++){var d=T[s+c];if(!d&&!r)break;a+=String.fromCodePoint(d)}return a},Lo=(e,t,r)=>{if(r??=2147483647,r<4)return 0;for(var a=t,s=a+r-4,c=0;c<e.length;++c){var d=e.codePointAt(c);if(d>65535&&c++,$[t>>2]=d,t+=4,t+4>s)break}return $[t>>2]=0,t-a},So=e=>{for(var t=0,r=0;r<e.length;++r){var a=e.codePointAt(r);a>65535&&r++,t+=4}return t},Mo=(e,t,r)=>{r=R(r);var a,s,c;t===2?(a=Do,s=Co,c=To):(a=Fo,s=Lo,c=So),q(e,{name:r,fromWireType:d=>{var u=T[d>>2],f=a(d+4,u*t,!0);return I(d),f},toWireType:(d,u)=>{typeof u!="string"&&M(`Cannot pass non-string to C++ string type ${r}`);var f=c(u),g=Be(4+f+t);return T[g>>2]=f/t,s(u,g+4,f+t),d!==null&&d.push(I,g),g},readValueFromPointer:Ge,destructorFunction(d){I(d)}})},Po=(e,t)=>{t=R(t),q(e,{isVoid:!0,name:t,fromWireType:()=>{},toWireType:(r,a)=>{}})},Ue=[],Ro=e=>{var t=Ue.length;return Ue.push(e),t},qo=(e,t)=>{var r=j[e];return r===void 0&&M(`${t} has unknown type ${yt(e)}`),r},Oo=(e,t)=>{for(var r=new Array(e),a=0;a<e;++a)r[a]=qo(T[t+a*4>>2],`parameter ${a}`);return r},Io=(e,t,r)=>{var a=[],s=e(a,r);return a.length&&(T[t>>2]=k.toHandle(a)),s},Wo={},de=e=>{var t=Wo[e];return t===void 0?R(e):t},Go=(e,t,r)=>{var a=8,[s,...c]=Oo(e,t),d=s.toWireType.bind(s),u=c.map(D=>D.readValueFromPointer.bind(D));e--;var f={toValue:k.toValue},g=u.map((D,ee)=>{var $e=`argFromPtr${ee}`;return f[$e]=D,`${$e}(args${ee?"+"+ee*a:""})`}),E;switch(r){case 0:E="toValue(handle)";break;case 2:E="new (toValue(handle))";break;case 3:E="";break;case 1:f.getStringOrSymbol=de,E="toValue(handle)[getStringOrSymbol(methodName)]";break}E+=`(${g})`,s.isVoid||(f.toReturnWire=d,f.emval_returnValue=Io,E=`return emval_returnValue(toReturnWire, destructorsRef, ${E})`),E=`return function (handle, methodName, destructorsRef, args) {
+  ${E}
+  }`;var U=new Function(Object.keys(f),E)(...Object.values(f)),H=`methodCaller<(${c.map(D=>D.name)}) => ${s.name}>`;return Ro(pt(H,U))},xt=()=>globalThis,No=e=>e===0?k.toHandle(xt()):(e=de(e),k.toHandle(xt()[e])),Uo=e=>(e=de(e),k.toHandle(n[e])),Ho=(e,t)=>(e=k.toValue(e),t=k.toValue(t),k.toHandle(e[t])),Bo=e=>{e>9&&(Y[e+1]+=1)},Vo=(e,t,r,a,s)=>Ue[e](t,r,a,s),$o=()=>k.toHandle([]),jo=e=>{e=k.toValue(e);for(var t=new Array(e.length),r=0;r<e.length;r++)t[r]=e[r];return k.toHandle(t)},Yo=e=>k.toHandle(de(e)),Xo=()=>k.toHandle({}),Ko=e=>{var t=k.toValue(e);gt(t),We(e)},Zo=(e,t,r)=>{e=k.toValue(e),t=k.toValue(t),r=k.toValue(r),e[t]=r},Et=()=>performance.now(),Jo=()=>Date.now(),Qo=1,en=e=>e>=0&&e<=3,tn=9007199254740992,rn=-9007199254740992,At=e=>e<rn||e>tn?NaN:Number(e);function on(e,t,r){if(t=At(t),!en(e))return 28;var a;if(e===0)a=Jo();else if(Qo)a=Et();else return 52;var s=Math.round(a*1e3*1e3);return ue[r>>3]=BigInt(s),0}var He=[],nn=(e,t)=>{He.length=0;for(var r;r=y[e++];){var a=r!=105;a&=r!=112,t+=a&&t%8?4:0,He.push(r==112?T[t>>2]:r==106?ue[t>>3]:r==105?$[t>>2]:Oe[t>>3]),t+=a?8:4}return He},an=(e,t,r)=>{var a=nn(t,r);return wn[e](...a)},sn=(e,t,r)=>an(e,t,r),ln=e=>{Ie("OOM")},cn=e=>{var t=y.length;e>>>=0,ln(e)},un=e=>52;function fn(e,t,r,a){return t=At(t),70}var dn=[null,[],[]],mn=(e,t=0,r,a)=>{var s=Ne(e,t,r,a);return wt.decode(e.buffer?e.subarray(t,s):new Uint8Array(e.slice(t,s)))},_n=(e,t)=>{var r=dn[e];t===0||t===10?((e===1?W:F)(mn(r)),r.length=0):r.push(t)},vn=(e,t,r,a)=>{for(var s=0,c=0;c<r;c++){var d=T[t>>2],u=T[t+4>>2];t+=8;for(var f=0;f<u;f++)_n(e,y[d+f]);s+=u}return T[a>>2]=s,0},pn=()=>e=>crypto.getRandomValues(e),kt=e=>{(kt=pn())(e)},gn=(e,t)=>(kt(y.subarray(e,e+t)),0),hn=()=>!0,bn=e=>{K=e,hn()||(N=!0),b(e,new mt(e))},zn=(e,t)=>{K=e,bn(e)},yn=e=>{if(e instanceof mt||e=="unwind")return K;b(1,e)};n.print&&(W=n.print);var wn={29520:()=>A.length},Dt,Be,I,Ct;function xn(e){n._main=Dt=e.J,Be=e.K,I=e.L,Ct=e.M}var En={A:Xr,s:Jr,D:Qr,B:to,r:oo,l:ho,m:bo,k:zo,C:Ao,o:Mo,E:Po,d:Go,a:We,g:No,i:Uo,n:Ho,b:Bo,c:Vo,F:$o,t:jo,h:Yo,f:Xo,e:Ko,j:Zo,z:on,p:sn,x:Et,v:cn,y:un,w:fn,q:vn,u:gn},Q=await Yr();function An(){var e=Dt,t=0,r=0;try{var a=e(t,r);return zn(a,!0),a}catch(s){return yn(s)}}function Ve(){if(ae>0){ie=Ve;return}if(ae>0){ie=Ve;return}function e(){if(n.calledRun=!0,!N){Wr(),L?.(n);var t=!1;t||An()}}e()}function xa(){}return Ve(),ft?i=n:i=new Promise((e,t)=>{L=e,z=t}),i}var Nt=Pn;var Ut=`precision highp float;
+#define GLSLIFY 1
+float m(vec2 z,float v,float m){z=abs(z);return length(z-min(z.s+z.t,v)*.5)-m;}vec2 m(vec2 z,vec2 m){return z-m*floor(z/m+.5);}uniform vec3 pz;uniform vec3 hz;uniform vec2 mz;uniform vec2 qz;uniform float bz;uniform float tz;float m(float v){return smoothstep(2.15,0.,v+1.05);}void main(){vec2 z=gl_FragCoord.st,v,u;float f=distance(z/mz,vec2(.5)),b,g,h,p,r;vec3 t=mix(hz,pz,(-cos(3.14159*clamp(f*1.818,0.,1.))+1.)/2.),d;b=fract(vec3(.06711056,.00583715,52.9829189).p*fract(dot(z,vec3(.06711056,.00583715,52.9829189).st)));t+=4./255.*b-2./255.;t=clamp(t,vec3(0),vec3(1));g=bz*1.5;v=z;u=qz-mz*.5;z-=mz*.5+u*.4;z/=g;z*=mat2(.877,-.479,.479,.877);z=m(z,vec2(410));h=m(z,138.,34.);z=v;z-=mz*.5+u*.2;z/=g;z*=mat2(.877,-.479,.479,.877);z=m(z,vec2(205));p=m(z,69.,17.);d=mix(t,mix(hz,pz,.65),m(p*.55)*.15);d=mix(d,hz,m(h*.55)*.11);r=gl_FragCoord.t-tz+50.*bz;r=(r-410.*bz)/(85.*bz);gl_FragColor=vec4(d,1);}`;var Ht=`precision highp float;
+
+attribute vec2 p;
+
+uniform mat3 zz;
+
+varying vec2 uv;
+
+void main()
+{
+    uv = p;
+    gl_Position = vec4((zz * vec3(p, 1.0)).xy, 0.0, 1.0);
+}`;var Bt=`precision highp float;
+
+varying vec2 uv;
+uniform sampler2D s;
+varying float opac;
+varying vec3 tint;
+
+vec4 unpremultiply(vec4 color)
+{
+    if (color.a == 0.0) // \u0418\u043D\u0430\u0447\u0435 \u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u043D\u0430 \u043D\u043E\u043B\u044C \u0438 \u043D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0430\u043B\u044C\u0444\u0430-\u043A\u043E\u043C\u043F\u043E\u0437\u0438\u043D\u0433\u0430 \u043F\u043E\u0442\u043E\u043C
+        return vec4(0.0);
+    return vec4(color.rgb / color.a, color.a);
+}
+
+void main()
+{
+    // \u041C\u0438\u043F\u044B \u043F\u0440\u0435\u043C\u0443\u043B\u044C\u0442\u0438\u043F\u043B\u0438\u0446\u0438\u0440\u043E\u0432\u0430\u043D\u044B
+    vec4 sample = unpremultiply(texture2D(s, uv, -0.65));
+    gl_FragColor = vec4(sample.rgb * tint, sample.a * opac);
+    //gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);
+}`;var Vt=`precision highp float;
+
+// \u0412\u043C\u0435\u0441\u0442\u043E \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438 \u043F\u043E\u0437\u0438\u0446\u0438\u0438\u0438 \u0438 \u0442\u0435\u043A\u0441\u0442\u0443\u0440\u043D\u044B\u0445 \u043A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442 \u0432\u0435\u0440\u0442\u0435\u043A\u0441\u0430 \u0434\u0432\u0443\u043C\u044F \u0430\u0442\u0442\u0440\u0438\u0431\u0443\u0442\u0430\u043C\u0438
+attribute float i;
+
+uniform mat3 vt;
+uniform mat3 tt;
+
+varying vec2 uv;
+varying float opac;
+varying vec3 tint;
+
+void main()
+{
+    opac = 1.0;
+    tint = vec3(1.0, 1.0, 1.0);
+    vec2 unit_quad = vec2(i > 1.0 ? 1.0 : 0.0, i == 1.0 || i == 3.0 ? 1.0 : 0.0);
+    uv = (tt * vec3(unit_quad, 1.0)).xy;
+    vec2 p = (vt * vec3(unit_quad, 1.0)).xy;
+    p.y = -p.y;
+    gl_Position = vec4(p, 0.0, 1.0);
+}`;var $t=`#ifdef GL_OES_standard_derivatives
+#extension GL_OES_standard_derivatives:enable
+#endif
+precision highp float;
+#define GLSLIFY 1
+float f(float f){return 1./6.*(f*(f*(-f+3.)-3.)+1.);}float v(float f){return 1./6.*(f*f*(3.*f-6.)+4.);}float s(float f){return 1./6.*(f*(f*(-3.*f+3.)+3.)+1.);}float D(float f){return 1./6.*(f*f*f);}float G(float s){return f(s)+v(s);}float m(float f){return s(f)+D(f);}float p(float s){return-1.+v(s)/(f(s)+v(s));}float h(float f){return 1.+D(f)/(s(f)+D(f));}vec4 D(sampler2D f,vec2 s,vec2 v){vec4 t=vec4(1./v,v);s=s*t.pq+.5;vec2 b=floor(s),d=fract(s);float o=G(d.s),D=m(d.s),z=p(d.s),r=h(d.s),E=p(d.t),C=h(d.t);return G(d.t)*(o*texture2D(f,(vec2(b.s+z,b.t+E)-.5)*t.st)+D*texture2D(f,(vec2(b.s+r,b.t+E)-.5)*t.st))+m(d.t)*(o*texture2D(f,(vec2(b.s+z,b.t+C)-.5)*t.st)+D*texture2D(f,(vec2(b.s+r,b.t+C)-.5)*t.st));}float x(float f){
+#ifdef GL_OES_standard_derivatives
+float s=fwidth(f*1.5)*.5;return smoothstep(s,-s,f);
+#else
+return step(f,0.);
+#endif
+}uniform vec2 kz;uniform float pz;uniform sampler2D oz,mz;uniform vec2 vz;uniform vec3 wz;uniform vec3 hz;uniform vec3 bz;uniform vec3 yz;uniform float nz;float b(float f){return x(f);}void main(){vec2 f=gl_FragCoord.st,z;f-=kz;f/=pz;z=(vec2(.5)+vec2(ivec2(f/8./vz*vz)))/vz;float s=(-8.75+14.75*D(mz,f/8./vz,vz).s)*8.,v,t,d;vec3 u=s<0.?vec3(.6,.8,1):vec3(.9,.6,.3),p;u*=1.+.2*cos(.64*abs(s));v=s+7.;t=v+28.;d=t+13.;if(d<5.)p=texture2D(oz,vec2(f.s,-f.t)*nz,-.65).stp*yz;vec4 G=vec4(wz,b(s));G.stp=mix(G.stp,hz,b(v));G.stp=mix(G.stp,bz,b(t));G.stp=mix(G.stp,p,b(d));gl_FragColor=G;}`;var jt=`#ifdef GL_OES_standard_derivatives
+#extension GL_OES_standard_derivatives:enable
+#endif
+precision highp float;
+#define GLSLIFY 1
+uniform vec2 kz;uniform float pz;uniform sampler2D oz,mz;uniform vec2 vz;uniform vec3 wz;uniform vec3 hz;uniform vec3 bz;uniform vec3 yz;uniform float nz;float v(float v){return step(v,0.);}void main(){vec2 u=gl_FragCoord.st,z;u-=kz;u/=pz;z=(vec2(.5)+vec2(ivec2(u/8./vz*vz)))/vz;float m=(-8.75+14.75*texture2D(mz,z).s)*8.,p,f,i;vec3 G=m<0.?vec3(.6,.8,1):vec3(.9,.6,.3),t;G*=1.+.2*cos(.64*abs(m));p=m+7.;f=p+28.;i=f+13.;if(i<5.)t=texture2D(oz,vec2(u.s,-u.t)*nz,-.65).stp*yz;vec4 g=vec4(wz,v(m));g.stp=mix(g.stp,hz,v(p));g.stp=mix(g.stp,bz,v(f));g.stp=mix(g.stp,t,v(i));gl_FragColor=g;}`;var Yt="precision highp float;uniform sampler2D pz;uniform vec2 tz;uniform float oz;uniform vec2 mz;uniform float sz;uniform float qz;uniform vec3 ez;uniform vec3 fz;uniform vec3 rz;uniform bool nz;float f(float f,float s,float z,float t){float v=1./t,u[7],o[7],g[7],i[7],r;u[0]=.977326437098832;u[1]=-.533871483718652;u[2]=.436731692193567;u[3]=-.225842487099053;u[4]=.0735214569463736;u[5]=.645706245768586;u[6]=-.676750469307728;o[0]=.143561793591872*z;o[1]=.360643892327322*z;o[2]=.993346292878996*z;o[3]=.621862913589039*z;o[4]=.8100667769306*z;o[5]=.128627163020364*z;o[6]=.323373571103567*z;g[0]=.822741275315363*v;g[1]=.176996861916737*v;g[2]=.355464705882208*v;g[3]=.238634795508305*v;g[4]=.701939697253445*v;g[5]=.743567263738673*v;g[6]=.142623111217167*v;i[0]=.353502592130137*v;i[1]=.880605288060702*v;i[2]=.789540103948325*v;i[3]=.887550741935374*v;i[4]=.168168347270596*v;i[5]=.357596489245962*v;i[6]=.195575269105442*v;r=0.;for(int m=0;m<7;++m)r+=u[m]+o[m]*sz*sin(f*(g[m]/sz)+s*sz*(i[m]/sz));return r;}float f(float v,float z){return z<.5?2.*v*z+v*v*(1.-2.*z):sqrt(v)*(2.*z-1.)+2.*v*(1.-z);}vec3 f(vec3 z,vec3 v){return vec3(f(z.s,v.s),f(z.t,v.t),f(z.p,v.p));}void main(){vec2 v=gl_FragCoord.st,z;float s=qz*sz+mz.t,u=-10.,g=-1e2;if(s-gl_FragCoord.t>-15.*sz){float m=f(gl_FragCoord.s-mz.s,oz/13.,2.1,15.),o;u=m-s;g=-gl_FragCoord.t-u;o=clamp(mix(1.,0.,g/sz/380.),0.,1.);if(g>0.){float t=-u-gl_FragCoord.t,r=-u+t,c=f(gl_FragCoord.t-mz.t,oz/13.,3.,15.),i=f(t*8.,oz/10.,1.5,15.)/sz,p=gl_FragCoord.s,C=r+o*f((gl_FragCoord.s-mz.s)*8.,oz/10.,1.5,15.)*i;v=vec2(p,C+c*2.1);}}z=v;gl_FragColor=texture2D(pz,vec2(z.s/tz.s,z.t/tz.t));if(g+1.5>0.){vec3 t=mix(ez,fz,clamp(-g/sz/180.,-2.,9999.)),i=f(t,gl_FragColor.stp);if(g+1.5<40.*sz){float m=f(gl_FragCoord.s-mz.s,oz/13.*.25,3.,8.)-s,o=-gl_FragCoord.t-m;vec4 r=vec4(rz,(1.-clamp((o/sz-15.)/5.,0.,1.))*.25),d=vec4(vec3(1.5),clamp(1.-(g/sz+7.+1.5/sz)/13.,0.,1.));i=mix(i,r.stp,r.q);i=mix(i,d.stp,d.q);}gl_FragColor=vec4(mix(gl_FragColor.stp,i,clamp(g+1.5,0.,1.)),1);}if(nz)gl_FragColor.s*=.8,gl_FragColor.t*=.8,gl_FragColor.p*=.95;}";var Xt=`precision highp float;precision highp int;
+#define GLSLIFY 1
+uniform sampler2D hz,tz;uniform int pz;uniform vec2 rz;uniform float qz;uniform float oz;float t(float z,float f){float t=clamp(.5-.5*(f+z)/2.5,0.,1.);return mix(f,-z,t)+2.5*t*(1.-t);}float t(vec3 t){float f=t.s*255.,z;bool p=f>=128.;if(p)f-=128.;z=f*256.+t.t*255.+t.p;return p?-z:z;}void main(){float f=-8.75+14.75*texture2D(hz,gl_FragCoord.st/rz).s;for(int p=0;p<128;++p){if(p==pz)break;vec4 h=texture2D(tz,vec2((float(p*3)+.5)/float(2040),.5)),v=texture2D(tz,vec2((float(p*3)+1.5)/float(2040),.5)),d=texture2D(tz,vec2((float(p*3)+2.5)/float(2040),.5));vec3 z=vec3(t(h.stp),t(v.stp),t(d.stp));f=t((length(gl_FragCoord.st*8.-z.st)-z.p)/8.,f);}gl_FragColor=vec4((clamp(f,-8.75,6.)+8.75)/14.75,0,0,1);}`;var Kt=`precision highp float;
+
+attribute float iz;
+attribute vec4 dz;
+
+uniform mat3 mz;
+uniform vec3 cz;
+uniform vec3 jz;
+uniform mat3 tt;
+
+uniform bool tz;
+bool no_opacity = tz;
+
+varying vec2 uv;
+varying float opac;
+varying vec3 tint;
+
+// FIXME: minification???
+
+void main()
+{
+    vec2 unit_quad = vec2(iz > 1.0 ? 1.0 : 0.0, iz == 1.0 || iz == 3.0 ? 1.0 : 0.0);
+
+    uv = (tt * vec3(unit_quad, 1.0)).xy;
+
+    float opacity = mod(dz.w, 2.0);
+    int id = int(dz.w / 2.0);
+
+    tint = mix(cz, jz, opacity);
+
+    if (no_opacity)
+        opacity = 1.0;
+
+    float angle = float(id) / 6.0 + opacity * 1.4;
+
+    opac = opacity;
+
+    mat3 tm;
+    tm[0].xyz = vec3(1.0, 0.0, 0.0);
+    tm[1].xyz = vec3(0.0, 1.0, 0.0);
+    tm[2].xyz = vec3(dz.x, dz.y, 1.0);
+
+    float c = cos(angle);
+    float s = sin(angle);
+
+    mat3 rm;
+    rm[0].xyz = vec3(c, s, 0.0);
+    rm[1].xyz = vec3(-s, c, 0.0);
+    rm[2].xyz = vec3(0.0, 0.0, 1.0);
+
+    // FIXME:  \u0441\u0434\u0432\u0438\u0433 \u0437\u0430\u0432\u0438\u0441\u0438\u0442 \u043E\u0442 \u0441\u043A\u0435\u0439\u043B\u0430? UPD: \u0434\u0430 \u0432\u0440\u043E\u0434\u0435 \u043D\u043E\u0440\u043C \u0432\u0441\u0435...
+    mat3 tm2;
+    tm2[0].xyz = vec3(1.0, 0.0, 0.0);
+    tm2[1].xyz = vec3(0.0, 1.0, 0.0);
+    tm2[2].xyz = vec3(-dz.z * 0.5, -dz.z * 0.5, 1.0);
+
+    float scale = dz.z;
+
+    mat3 sm;
+    sm[0].xyz = vec3(scale, 0.0, 0.0);
+    sm[1].xyz = vec3(0.0, scale, 0.0);
+    sm[2].xyz = vec3(0.0, 0.0, 1.0);
+
+    // mat3( - \u0438\u043D\u0430\u0447\u0435 \u043C\u0438\u043D\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440 \u043D\u0435\u0432\u0435\u0440\u043D\u043E \u0443\u043F\u0440\u043E\u0441\u0442\u0438\u0442 \u0432\u044B\u0440\u0430\u0436\u0435\u043D\u0438\u0435
+    mat3 matrix = mz * mat3(tm * rm * tm2 * sm);
+
+    gl_Position = vec4((matrix * vec3(unit_quad, 1.0)).xy, 0.0, 1.0);
+}`;var Zt=`precision highp float;
+
+attribute vec3 d_1;
+attribute vec4 d_2;
+
+uniform float s;
+uniform vec2 t;
+uniform vec2 r;
+
+varying float a;
+varying float m;
+varying vec3 cc;
+
+void main()
+{
+    cc = d_2.rgb;
+    a = d_2.a;
+    m = d_1.z * s;
+    // int?
+    gl_PointSize = ceil(d_1.z * s) + 2.0; // \u0438\u043D\u0430\u0447\u0435 \u043E\u0431\u0440\u0435\u0437\u0430\u0435\u0442... \u0430\u043B\u0441\u043E \u043D\u0435\u043B\u044C\u0437\u044F \u043D\u043E\u043B\u044C?
+    vec2 p = (d_1.xy * s + t) / r * 2.0 - 1.0;
+    p.y = -p.y;
+    gl_Position = vec4(p, 0.0, 1.0);
+}`;var Jt=`precision highp float;
+
+varying float a;
+varying float m;
+varying vec3 cc;
+
+void main()
+{
+    float point_size = ceil(m) + 2.0;// \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C gl_PointSize ?
+    float d = length(gl_PointCoord - vec2(0.5)) - (m / point_size * 0.5);
+    d *= point_size;
+    if (m <= 0.0)
+        d = 10.0;
+    gl_FragColor = vec4(cc, smoothstep(2.15, 0.0, d + 1.05) * a);
+}`;var Qt=`// NOTE: \u043A\u043E\u043C\u043C\u0435\u043D\u0442 \u0440\u044F\u0434\u043E\u043C \u0441 \u0438\u043C\u043F\u043E\u0440\u0442\u043E\u043C \u0448\u0435\u0439\u0434\u0435\u0440\u0430
+
+precision highp float;
+
+attribute vec2 d_1;
+attribute vec4 d_2;
+
+uniform float s;
+uniform vec2 t;
+uniform vec2 r;
+
+varying vec4 tint;
+
+void main()
+{
+    tint = d_2;
+    vec2 p = (d_1 * s + t) / r * 2.0 - 1.0;
+    p.y = -p.y;
+    gl_Position = vec4(p, 0.0, 1.0);
+}`;var er=`precision highp float;
+
+varying vec4 tint;
+
+void main()
+{
+    gl_FragColor = tint;
+}`;var tr=`precision highp float;
+#define GLSLIFY 1
+attribute float iz;attribute vec4 dz;attribute float d2;uniform mat3 mz;uniform vec2 t2;uniform sampler2D tz;uniform vec4 r1,r2,r3,r4,r5;varying vec2 uv;varying float opac;varying vec3 tint;void main(){vec2 p=vec2(iz>1.?1.:0.,iz==1.||iz==3.?1.:0.);opac=1.;tint=vec3(1);vec4 v;v=dz.q<1.5?r1:dz.q<2.5?r2:dz.q<3.5?r3:dz.q<4.5?r4:r5;uv=v.st+v.pq*p;bool f=(-8.75+14.75*texture2D(tz,dz.st/8./t2).s)*8.<0.;if(!f){gl_Position=vec4(0,-100,0,1);return;}mat3 t,r,u,a,z;t[0].stp=vec3(1,0,0);t[1].stp=vec3(0,1,0);t[2].stp=vec3(dz.st,1);float d=cos(d2),n=sin(d2);r[0].stp=vec3(d,n,0);r[1].stp=vec3(-n,d,0);r[2].stp=vec3(0,0,1);u[0].stp=vec3(1,0,0);u[1].stp=vec3(0,1,0);u[2].stp=vec3(-dz.p/2.,-dz.p-4.,1);a[0].stp=vec3(dz.p,0,0);a[1].stp=vec3(0,dz.p,0);a[2].stp=vec3(0,0,1);z=mz*mat3(t*r*u*a);gl_Position=vec4((z*vec3(p,1)).st,0,1);}`;var rr=`precision highp float;precision highp int;
+#define GLSLIFY 1
+vec3 t(float t){float f=abs(t);int i=int(f),g=i/256,s=i-g*256;if(t<0.)g+=128;return vec3(float(g)/255.,float(s)/255.,fract(f));}uniform vec2 qz;uniform int tz,kz,fz;float i(vec2 t){return fract(sin(dot(t.st,vec2(12.9898,78.233)))*43758.5453123);}void main(){int f=int(gl_FragCoord.t)*fz+int(gl_FragCoord.s),g,s;if(!(f>=tz&&f<=kz))discard;g=int(gl_FragCoord.s);s=g/4;vec2 q=vec2(float(s),gl_FragCoord.t);float v=i(q),k=i(q+vec2(9e3,0)),r=i(q+vec2(18000,0)),C=i(q+vec2(27000,0)),d=v*6.28,z=cos(d)*k*7.,F=sin(d)*k*7.;{int h=g-4*s;gl_FragColor=h==0?vec4(t(qz.s+r*7.),0):h==1?vec4(t(qz.t+C*7.),0):h==2?vec4(t(z),0):vec4(t(F),0);}}`;var or=`precision highp float;precision highp int;
+#define GLSLIFY 1
+float v(vec3 t){float v=t.s*255.,f;bool i=v>=128.;if(i)v-=128.;f=v*256.+t.t*255.+t.p;return i?-f:f;}vec3 t(float t){float v=abs(t);int i=int(v),f=i/256,g=i-f*256;if(t<0.)f+=128;return vec3(float(f)/255.,float(g)/255.,fract(v));}uniform sampler2D iz,tz;uniform vec2 rz,oz;float f(vec2 t){vec2 v=t/8./oz;return(-8.75+14.75*texture2D(tz,vec2(v.s,1.-v.t)).s)*8.;}vec2 D(vec2 t){vec2 v=vec2(f(vec2(t.s+1.,t.t))-f(vec2(t.s-1.,t.t)),f(vec2(t.s,t.t+1.))-f(vec2(t.s,t.t-1.)));return normalize(v);}void main(){int i=int(gl_FragCoord.s),g=i/4,a=i-4*g;float z=float(g*4)+.5,r,s;vec4 d=texture2D(iz,vec2(z,gl_FragCoord.t)/rz),o=texture2D(iz,vec2(z+1.,gl_FragCoord.t)/rz),C=texture2D(iz,vec2(z+2.,gl_FragCoord.t)/rz),F=texture2D(iz,vec2(z+3.,gl_FragCoord.t)/rz),u=vec4(v(d.stp),v(o.stp),v(C.stp),v(F.stp));r=d.q*255.;s=f(u.st);u.q+=.1;if(s<0.){vec2 h=D(u.st);u.pq+=h*max(-s,0.)*2.;u.pq*=1.-step(s,0.)*.1;}u.st+=u.pq;++r;gl_FragColor=a==0?vec4(t(u.s),r/255.):a==1?vec4(t(u.t),0):a==2?vec4(t(u.p),0):vec4(t(u.q),0);}`;var nr=`precision highp float;precision highp int;
+#define GLSLIFY 1
+float v(vec3 z){float v=z.s*255.,u;bool t=v>=128.;if(t)v-=128.;u=v*256.+z.t*255.+z.p;return t?-u:u;}attribute vec2 oz;uniform sampler2D iz;uniform vec2 rz;uniform vec3 wz,hz,bz;uniform float sz;uniform vec2 tz,qz;varying float a,m;varying vec3 cc;void main(){vec4 z=texture2D(iz,vec2(oz.s*4.,oz.t)/rz);float t=(1e3-z.q*255.*16.666)*.008*1.2,u=fract(sin(dot(oz.st,vec2(12.9898,78.233)))*43758.5453123)*3.;cc=u<1.?wz:u<2.?hz:bz;a=1.;m=t*sz;gl_PointSize=ceil(t*sz)+2.;vec2 i=(vec2(v(z.stp),v(texture2D(iz,vec2(oz.s*4.+1.,oz.t)/rz).stp)).st*sz+tz)/qz*2.-1.;i.t=-i.t;gl_Position=vec4(i,0,1);}`;var ar=`precision highp float;
+
+varying vec2 uv;
+uniform float ti;
+uniform vec3 az;
+
+float ease_out_quint(float x)
+{
+    return 1.0 - pow(1.0 - x, 5.0);
+}
+
+void main()
+{
+    float l = length((uv - 0.5) * 2.0);
+    float col = sin(ease_out_quint(fract(ti)) * 6.28 - l * 3.0) * (1.0 - clamp(l, 0.0,1.0));
+    gl_FragColor = vec4(col + az.r, col + az.g, col + az.b, col/* * 0.7*/);
+}`;var ir=`precision highp float;
+#define GLSLIFY 1
+vec4 h(vec4 h,vec4 v){vec3 f=h.stp*h.q+v.stp*v.q*(1.-h.q);float e=h.q+v.q*(1.-h.q);if(e!=0.)f/=e;return vec4(f,e);}float h(vec2 v,float f,float h){v.t-=clamp(v.t,0.,f);return length(v)-h;}varying vec2 uv;uniform vec2 he;uniform float ez;uniform vec3 yz;void main(){float v=he.s*.5,f=h(uv*he-vec2(v),he.t-v*2.,v)+2.,q=ez*.5;gl_FragColor=h(vec4(yz,smoothstep(2.15,0.,abs(f+q)-q+1.05)),vec4(vec3(1),smoothstep(2.15,0.,f+1.05)));}`;var sr=`#ifdef GL_OES_standard_derivatives
+#extension GL_OES_standard_derivatives:enable
+#endif
+precision highp float;
+#define GLSLIFY 1
+vec4 v(vec4 v,vec4 t){vec3 f=v.stp*v.q+t.stp*t.q*(1.-v.q);float z=v.q+t.q*(1.-v.q);if(z!=0.)f/=z;return vec4(f,z);}float v(float v){
+#ifdef GL_OES_standard_derivatives
+float f=fwidth(v*1.5)*.5;return smoothstep(f,-f,v);
+#else
+return step(v,0.);
+#endif
+}float f(float v,float f){float t=clamp(.5-.5*(f+v)/35.,0.,1.);return mix(f,-v,t)+35.*t*(1.-t);}float f(float v){return 1./6.*(v*(v*(-v+3.)-3.)+1.);}float D(float v){return 1./6.*(v*v*(3.*v-6.)+4.);}float m(float v){return 1./6.*(v*(v*(-3.*v+3.)+3.)+1.);}float G(float v){return 1./6.*(v*v*v);}float h(float v){return f(v)+D(v);}float p(float v){return m(v)+G(v);}float s(float v){return-1.+D(v)/(f(v)+D(v));}float k(float v){return 1.+G(v)/(m(v)+G(v));}vec4 D(sampler2D v,vec2 f,vec2 t){vec4 z=vec4(1./t,t);f=f*z.pq+.5;vec2 m=floor(f),d=fract(f);float G=h(d.s),D=p(d.s),l=s(d.s),r=k(d.s),q=s(d.t),C=k(d.t);return h(d.t)*(G*texture2D(v,(vec2(m.s+l,m.t+q)-.5)*z.st)+D*texture2D(v,(vec2(m.s+r,m.t+q)-.5)*z.st))+p(d.t)*(G*texture2D(v,(vec2(m.s+l,m.t+C)-.5)*z.st)+D*texture2D(v,(vec2(m.s+r,m.t+C)-.5)*z.st));}uniform vec4 tz;uniform vec4 pz;uniform sampler2D mz;uniform vec2 vz;uniform float hz;uniform vec2 ez;uniform vec2 kz;uniform float oz;void main(){vec2 m=gl_FragCoord.st;m-=kz;m/=oz;float G=(-8.75+14.75*D(mz,m/8./vz,vz).s)*8.,t=f(G,length(m-ez)-hz+2./oz);vec4 s=vec4(tz.stp,v(t)*tz.q),d=vec4(pz.stp,v(max(-t-6.5,t))*pz.q);gl_FragColor=v(d,s);}`;var lr=`precision highp float;precision highp int;
+#define GLSLIFY 1
+float t(float z,float t){float f=clamp(.5-.5*(t+z)/35.,0.,1.);return mix(t,-z,f)+35.*f*(1.-f);}vec3 t(float t){float f=abs(t);int v=int(f),z=v/256,g=v-z*256;if(t<0.)z+=128;return vec3(float(z)/255.,float(g)/255.,fract(f));}float f(vec3 t){float v=t.s*255.,f;bool z=v>=128.;if(z)v-=128.;f=v*256.+t.t*255.+t.p;return z?-f:f;}uniform sampler2D iz,tz;uniform vec2 rz,oz,mz;uniform float nz;uniform int cz;uniform bool uz;float v(vec2 t){return fract(sin(dot(t.st,vec2(12.9898,78.233)))*43758.5453123);}float D(vec2 t){vec2 f=floor(t),z=fract(t),g;float i=v(f),s=v(f+vec2(1,0)),c=v(f+vec2(0,1)),r=v(f+vec2(1));g=z*z*(3.-2.*z);return mix(i,s,g.s)+(c-i)*g.t*(1.-g.s)+(r-s)*g.s*g.t;}
+#define OCTAVES 6
+float i(vec2 t){float f=0.,v=.5;for(int i=0;i<OCTAVES;i++)f+=v*D(t),t*=2.,v*=.5;return f;}float g(vec2 v){vec2 f=v/8./oz;float z=(-8.75+14.75*texture2D(tz,vec2(f.s,1.-f.t)).s)*8.,g;if(uz)return z;g=t(z,length(v-mz)-nz);return-g-10.;}vec2 n(vec2 t){vec2 f=vec2(g(vec2(t.s+1.,t.t))-g(vec2(t.s-1.,t.t)),g(vec2(t.s,t.t+1.))-g(vec2(t.s,t.t-1.)));return normalize(f);}void main(){int v=int(gl_FragCoord.s),z=v/4,r=v-4*z;float s=float(z*4)+.5,c,u;vec4 d=texture2D(iz,vec2(s,gl_FragCoord.t)/rz),l=texture2D(iz,vec2(s+1.,gl_FragCoord.t)/rz),m=texture2D(iz,vec2(s+2.,gl_FragCoord.t)/rz),o=texture2D(iz,vec2(s+3.,gl_FragCoord.t)/rz),b=vec4(f(d.stp),f(l.stp),f(m.stp),f(o.stp));if(b.s<-1e3){gl_FragColor=d;return;}c=d.q*255.;u=g(b.st);b.pq*=.997;vec2 p=vec2(float(cz),0),q=vec2(0,float(cz)),A=vec2(float(z),gl_FragCoord.t);if(uz)b.p+=(i(A+q)-.5)*.5,b.q+=(i(A+p)-.5)*.5;else b.p+=i(A+q)-.5,b.q+=i(A+p)-.5;if(u<0.){vec2 h=n(b.st);b.pq+=h*max(-u,0.)*2.;b.pq*=1.-step(u,0.)*.1;}b.st+=b.pq;++c;gl_FragColor=r==0?vec4(t(b.s),c/255.):r==1?vec4(t(b.t),l.q):r==2?vec4(t(b.p),0):vec4(t(b.q),0);}`;var cr=`precision highp float;precision highp int;
+#define GLSLIFY 1
+float v(vec3 z){float v=z.s*255.,u;bool i=v>=128.;if(i)v-=128.;u=v*256.+z.t*255.+z.p;return i?-u:u;}attribute vec2 oz;uniform sampler2D iz;uniform vec2 rz;uniform float sz;uniform vec2 tz,qz;uniform vec3 yz;varying float a,m;varying vec3 cc;void main(){vec4 z=texture2D(iz,vec2(oz.s*4.,oz.t)/rz),o=texture2D(iz,vec2(oz.s*4.+1.,oz.t)/rz);float i=z.q*255.,u;if(o.q>.5)i+=165.;u=(255.*(1e3/60.)-i*16.666)*(.00135+fract(sin(dot(oz.st,vec2(12.9898,78.233)))*43758.5453123)*.002);cc=yz;a=1.;m=u*sz;gl_PointSize=ceil(u*sz)+2.;vec2 f=(vec2(v(z.stp),v(o.stp)).st*sz+tz)/qz*2.-1.;f.t=-f.t;gl_Position=vec4(f,0,1);}`;var ur=`precision highp float;precision highp int;
+#define GLSLIFY 1
+vec3 t(float t){float s=abs(t);int v=int(s),f=v/256,g=v-f*256;if(t<0.)f+=128;return vec3(float(f)/255.,float(g)/255.,fract(s));}uniform vec2 qz;uniform sampler2D hz;uniform vec2 ez;float s(vec2 t){return fract(sin(dot(t.st,vec2(12.9898,78.233)))*43758.5453123);}void main(){int v=int(gl_FragCoord.s),f=v/4;vec2 g=vec2(float(f),gl_FragCoord.t),i,z;float h=s(g),r=s(g+vec2(9e3,0)),a=s(g+vec2(18000,0)),C=s(g+vec2(27000,0)),c=a*6.28,D=40.+C*8.,u,d,p,F;i=qz+vec2(cos(c)*D,sin(c)*D);u=h*6.28;d=cos(u)*r*5.;p=sin(u)*r*5.;z=i/8./ez;F=(-8.75+14.75*texture2D(hz,vec2(z.s,1.-z.t)).s)*8.;if(F<0.)i.s=-1337.;{int q=v-4*f;gl_FragColor=q==0?vec4(t(i.s),0):q==1?vec4(t(i.t),0):q==2?vec4(t(d),0):vec4(t(p),0);}}`;var fr=`precision highp float;
+
+attribute vec2 vp;
+
+attribute vec3 dz_1;
+attribute vec3 dz_2;
+attribute vec4 dz_3;
+attribute vec4 dz_4;
+attribute float dz_5;
+
+uniform mat3 mz;
+
+uniform vec2 s0;
+uniform vec2 s1;
+uniform vec2 s2;
+uniform vec2 s3;
+uniform vec2 s4;
+uniform vec2 s5;
+uniform vec2 s6;
+uniform vec2 s7;
+
+varying vec2 uv;
+varying vec4 tint;
+varying float id;
+
+void main()
+{
+    float id_ = dz_5;
+
+    bool not_enlarged = id_ > 90.0;
+    if (not_enlarged) {
+        id_ -= 100.0;
+    }
+
+    vec2 size;
+    if (id_ < 0.5)
+        size = s0;
+    else if (id_ < 1.5)
+        size = s1;
+    else if (id_ < 2.5)
+        size = s2;
+    else if (id_ < 3.5)
+        size = s3;
+    else if (id_ < 4.5)
+        size = s4;
+    else if (id_ < 5.5)
+        size = s5;
+    else if (id_ < 6.5)
+        size = s6;
+    else
+        size = s7;
+
+    // \u0417\u0430\u0445\u0432\u0430\u0442\u0438\u0442\u044C \u043D\u0430 3 \u043F\u0438\u043A\u0441. \u0431\u043E\u043B\u044C\u0448\u0435 \u0442\u0435\u043A\u0441\u0442\u0443\u0440\u044B, \u0438 \u043F\u0440\u043E\u043F\u043E\u0440\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C \u0441\u043F\u0440\u0430\u0439\u0442, \u0447\u0442\u043E\u0431\u044B \u043E\u043D \u043D\u0435 \u0443\u043C\u0435\u043D\u044C\u0448\u0438\u043B\u0441\u044F
+    // fixes jagged edges on rotated sprites
+    // \u0415\u0441\u043B\u0438 1 - \u044D\u0442\u043E, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, 128, \u0442\u043E 64 - 0.5, 3 - 0.023
+    // TODO \u043F\u0435\u0440\u0435\u043D\u0435\u0441\u0442\u0438 \u043B\u043E\u0433\u0438\u043A\u0443 \u043D\u0430 c\u0442\u043E\u0440\u043E\u043D\u0443 C++?
+    // \u041C\u0438\u043D\u0443\u0441 \u0442\u0435\u0445\u043D\u0438\u043A\u0438 - \u0431\u0435\u0441\u0441\u043C\u044B\u0441\u043B\u0435\u043D\u043D\u043E, \u0435\u0441\u043B\u0438 \u0440\u0438\u0441\u043E\u0432\u0430\u0442\u044C \u043A\u0443\u0441\u043E\u043A \u043E\u0434\u043D\u043E\u0433\u043E \u0441\u043F\u0440\u0430\u0439\u0442\u0430?
+    vec2 offset = 3.0 / (dz_4.zw * size);
+    vec2 quad = not_enlarged ? vp : vec2(vp.x < 0.5 ? vp.x - offset.x : vp.x + offset.x, vp.y < 0.5 ? vp.y - offset.y : vp.y + offset.y);
+
+    id = id_;
+    tint = dz_3;
+    // NOTE: \u0443\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442\u0441\u044F, \u0435\u0441\u043B\u0438 \u0442\u0435\u043A\u0441\u0442\u0443\u0440\u043D\u0430\u044F \u0442\u0440\u0430\u043D\u0441\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u0444\u043B\u0438\u043F\u043D\u0443\u0442\u0430
+    uv = dz_4.xy + dz_4.zw * quad;
+
+    mat3 vt;
+    vt[0] = vec3(dz_1.x, dz_2.x, 0.0);
+    vt[1] = vec3(dz_1.y, dz_2.y, 0.0);
+    vt[2] = vec3(dz_1.z, dz_2.z, 1.0);
+    gl_Position = vec4((mz * vt * vec3(quad, 1.0)).xy, 0.0, 1.0);
+}`;var dr=`precision highp float;
+
+uniform sampler2D s[8];
+
+uniform bool mk;
+
+varying vec2 uv;
+varying vec4 tint;
+varying float id;
+
+void main()
+{
+    vec4 color;
+    if (id < 0.5)
+        color = texture2D(s[0], uv, -0.65);
+    else if (id < 1.5)
+        color = texture2D(s[1], uv, -0.65);
+    else if (id < 2.5)
+        color = texture2D(s[2], uv, -0.65);
+    else if (id < 3.5)
+        color = texture2D(s[3], uv, -0.65);
+    else if (id < 4.5)
+        color = texture2D(s[4], uv, -0.65);
+    else if (id < 5.5)
+        color = texture2D(s[5], uv, -0.65);
+    else if (id < 6.5)
+        color = texture2D(s[6], uv, -0.65);
+    else
+        color = texture2D(s[7], uv, -0.65);
+
+    // \u041C\u0438\u043F\u044B \u043F\u0440\u0435\u043C\u0443\u043B\u044C\u0442\u0438\u043F\u043B\u0438\u0446\u0438\u0440\u043E\u0432\u0430\u043D\u044B
+    color.rgb /= color.a;
+
+    color *= tint;
+
+    gl_FragColor = color;
+
+    // == 0.0 \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u043C\u043D\u043E\u0433\u043E \u043F\u043E\u043A\u0440\u044B\u0432\u0430\u0435\u0442
+    // != 1.0 \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u043C\u0430\u043B\u043E, \u0438 \u043F\u043E\u043B\u0443\u043F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u044B\u0435 \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u0438\u0434\u0443\u0442 \u043B\u0435\u0441\u043E\u043C
+    // < 0.5 \u0432 \u0441\u0430\u043C\u044B\u0439 \u0440\u0430\u0437, \u043D\u043E \u043F\u043E\u043B\u0443\u043F\u0440\u043E\u0437\u0440\u0430\u0447\u043D\u044B\u0435 \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u0438\u0434\u0443\u0442 \u043B\u0435\u0441\u043E\u043C, \u0438 \u043D\u0443\u0436\u043D\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \u0441 \u043C\u0430\u0441\u043A\u043E\u0439 \u0440\u0438\u0441\u043E\u0432\u0430\u0442\u044C \u0434\u043E \u0441\u0442\u0435\u043D\u0441\u0438\u043B\u0430, \u0443\u0445\u0443\u0434\u0448\u0430\u044F \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0432 \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u0441\u043B\u0443\u0447\u0430\u044F\u0445 
+    // mk - \u0447\u0438\u0441\u0442\u043E \u043D\u0430\u0434\u0435\u0436\u0434\u0430, \u0447\u0442\u043E \u0434\u0440\u0430\u0439\u0432\u0435\u0440 \u0441\u043C\u043E\u0436\u0435\u0442 \u0432\u044B\u043F\u0438\u043B\u0438\u0442\u044C discard \u0432 \u043E\u0431\u044B\u0447\u043D\u044B\u0445 \u0432\u044B\u0437\u043E\u0432\u0430\u0445
+    if (mk && color.a == 0.0) discard;
+}`;var mr="precision highp float;uniform vec2 kz;uniform float pz;uniform vec4 qz;uniform float cz;vec2 t(vec2 v){v=vec2(dot(v,vec2(127.1,311.7)),dot(v,vec2(269.5,183.3)));return fract(sin(v)*18.5453);}vec2 t(vec2 v,float f){vec2 i=floor(v),c=fract(v);vec3 d=vec3(8);for(int s=-1;s<=1;s++)for(int u=-1;u<=1;u++){vec2 p=vec2(float(u),float(s)),q=t(i+p),r=p-c+(.5+.5*sin(f+6.2831*q));float h=dot(r,r);if(h<d.s)d=vec3(h,q);}return vec2(sqrt(d.s),d.t+d.p);}void main(){vec2 v=gl_FragCoord.st;v-=kz;v/=pz;float f,u,z;{vec2 d=v,r;d.t+=cz*.03;d/=120.;r=t(d,cz/1e3/3.);f=r.s;u=r.t;f*=120.;f*=pz;}z=2.*pz*u;gl_FragColor=vec4(qz.stp,qz.q*smoothstep(2.15,0.,f-z+1.05));}";var _r=`precision highp float;
+
+uniform vec2 yz;
+uniform float qz;
+
+void main()
+{
+    gl_FragColor = vec4(vec3(0.0), 1.0 - smoothstep(2.15, 0.0, length(gl_FragCoord.xy - yz) - qz + 1.05));
+}`;var vr=`precision highp float;
+
+attribute vec2 vp;
+
+attribute vec3 d_1;
+attribute vec4 d_2;
+
+uniform float s;
+uniform vec2 t;
+uniform vec2 r;
+
+varying vec2 uv;
+varying vec4 tint;
+varying float m;
+
+void main()
+{
+    float D_units = d_1.z;
+    float D_pixels = D_units * s;
+    float r_pixels = D_pixels * 0.5;
+    vec2 center_world_units = d_1.xy;
+    vec2 center_pixels = center_world_units * s + t;
+    vec2 p = center_pixels - r_pixels + D_pixels * vp;
+    p = p / r * 2.0 - 1.0;
+    p.y = -p.y;
+
+    uv = vp * D_pixels;
+    tint = d_2;
+    m = r_pixels;
+    gl_Position = vec4(p, 0.0, 1.0);
+}`;var pr=`precision highp float;
+
+varying vec4 tint;
+varying vec2 uv;
+varying float m;
+
+void main()
+{
+    gl_FragColor = vec4(tint.rgb, smoothstep(2.15, 0.0, length(uv - m) - m + 1.05) * tint.a);
+}`;var ua=[tr,Bt,Ht,Ut,Vt,$t,Yt,Xt,Zt,_r,Jt,rr,or,nr,Qt,Kt,ar,er,jt,"","",ir,sr,lr,cr,ur,fr,dr,mr,vr,pr],fa=0,gr=0,hr=0,br=0,zr=0,yr=0,wr=0,xr=0,ge=!1;function he(){wr=0,xr=0,ge=!1}var da=new pe,Je=class{preRun=[];postRun=[];totalDependencies=0;constructor(){this.setStatus("Downloading..."),window.addEventListener("error",i=>{this.setStatus=n=>{if(n)throw new Error("[post-exception status] "+n)}})}print(i){arguments.length>1&&(i=Array.prototype.slice.call(arguments).join(" ")),console.log(i)}setStatus(i){if(this.setStatus.last||(this.setStatus.last={time:Date.now(),text:""}),i!==this.setStatus.last.text){var n=i.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/),l=Date.now();n&&l-this.setStatus.last.time<30||(this.setStatus.last.time=l,this.setStatus.last.text=i)}}monitorRunDependencies(i){this.totalDependencies=Math.max(this.totalDependencies,i),this.setStatus(i?"Preparing... ("+(this.totalDependencies-i)+"/"+this.totalDependencies+")":"All downloads complete.")}util={fb_ex:i=>{i.use(()=>{this.o4()})},get:i=>ua[i],ui_4:i=>{fa=i},ui_5:(i,n,l)=>{gr=i,hr=n,br=l},ui_6:(i,n)=>{zr=i,yr=n},download:ma,text_generator:da,boom:O,mobile:ve(),state:{},f:new ArrayBuffer,w:0,h:0,inst:{},sp:{}}};function ma(o,i=!0){let n={image:new Image,decoded:!1};return++wr,n.image.src=`./resources/${o}`+(i?".png":""),n.image.decode().then(()=>{n.decoded=!0,++xr}).catch(()=>{ge=!0}),n}var h=null,oe=Nt(new Je).then(o=>(h=o,o));var be=!1,S={tick_total:0,tick_count:0,tick_dt:0,tick_max_dt:0,draw_total:0,draw_count:0,draw_dt:0,draw_max_dt:0},ze=It("./regl.unchecked.min.js");var Qe=!1,ye=new Promise(o=>{let i=setInterval(()=>{Qe&&(clearInterval(i),o(void 0))},0)});function we(o,i){S={tick_total:0,tick_count:0,tick_dt:0,tick_max_dt:0,draw_total:0,draw_count:0,draw_dt:0,draw_max_dt:0};let n=createREGL({container:o,attributes:{alpha:!1,antialias:!1,depth:!1,stencil:!0},extensions:["ANGLE_instanced_arrays"],optionalExtensions:["OES_standard_derivatives"]});return n.on("lost",()=>{alert(i.mainMenu.contextLost)}),n}async function xe(o){let i={};return await Promise.all(o.map(async n=>{let l=await fetch(n.path);if(!l.ok)throw new Error("Response is not OK");i[n.name]=await l.json()})),i}async function Ee(o){let i=[...o];i.push({name:"white_1x1",path:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRF////p8QbyAAAAApJREFUeJxjZAAAAAQAAiFkrWoAAAAASUVORK5CYII="}),i.push({name:"transparent_1x1",path:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII="});let n={};return await Promise.all(i.map(async l=>{let _=new Image;_.src=l.path,await _.decode(),n[l.name]=_})),n}function Er(o){S.tick_dt=o,S.tick_dt>S.tick_max_dt&&(S.tick_max_dt=S.tick_dt),S.tick_total+=o,++S.tick_count}function Ae(o){S.draw_dt=o,S.draw_dt>S.draw_max_dt&&(S.draw_max_dt=S.draw_dt),S.draw_total+=o,++S.draw_count}function ke(o,i){ge&&document.getElementById("unimportant_asset_loading_error")===null&&o.insertAdjacentHTML("beforeend",`
+        <div id="unimportant_asset_loading_error" style="
+            position: absolute;
+            left: min(5.5vh, 5.5vw);
+            top: min(10vh, 10vw);
+            font-size: min(3vh, 3vw);
+            z-index: 100500;
+            background-color: rgba(0,0,0,.4);
+            border-radius: 500px;
+            padding: min(3vh, 3vw) min(4.5vh, 4.5vw);
+            color: tomato;
+        ">${i.mainMenu.unimportant_asset_loading_error}</div>
+    `)}function De(){let o=new DocumentFragment;if(Qe)return o;let i=document.createElement("style");i.textContent=`
+        @keyframes branding___anim {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    `,o.append(i);let n=document.createElement("div");return n.addEventListener("animationend",()=>{Qe=!0}),n.style.position="absolute",n.style.inset="0",n.style.display="flex",n.style.alignItems="center",n.style.justifyContent="center",n.style.pointerEvents="none",n.style.userSelect="none",n.style.backgroundColor="black",n.style.zIndex="100500",n.innerHTML=`
+        <div style="
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: min(calc(183vh * 0.4), calc(183vw * 0.3));
+            height: min(calc(31vh * 0.4), calc(31vw * 0.3));
+            animation: 1.65s branding___anim 0.25s linear 1 both;
+        "></div>
+        <div style="
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: min(calc(45vh * 0.4), calc(45vw * 0.3));
+            height: min(calc(45vh * 0.4), calc(45vw * 0.3));
+            margin-left: min(calc(20vh * 0.4), calc(20vw * 0.3));
+            animation: 1.65s branding___anim 0.25s linear 1 both;
+        "></div>
+        <div style="
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: min(calc(38vh * 0.4), calc(38vw * 0.3));
+            height: min(calc(38vh * 0.4), calc(38vw * 0.3));
+            margin-left: min(calc(15vh * 0.4), calc(15vw * 0.3));
+            animation: 1.65s branding___anim 0.25s linear 1 both;
+        "></div>
+    `,n.firstElementChild.style.backgroundImage=`url("data:image/svg+xml,%3Csvg width='140' height='24' viewBox='0 0 140 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.707 2.454C4.707 1.154 5.761.1 7.06.1h9.414a2.354 2.354 0 0 1 0 4.707H7.06a2.353 2.353 0 0 1-2.353-2.353Z' fill='%23fff'/%3E%3Cpath d='M4.707 21.28c0-1.3 1.054-2.354 2.353-2.354h9.414a2.353 2.353 0 1 1 0 4.707H7.06a2.353 2.353 0 0 1-2.353-2.353Z' fill='%23fff'/%3E%3Cpath d='M0 7.16a2.353 2.353 0 0 1 4.707 0v9.413a2.353 2.353 0 0 1-4.707 0V7.16Z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 7.16a2.353 2.353 0 0 1 4.707 0v9.413a2.353 2.353 0 0 1-4.707 0V7.159Z' fill='%23fff'/%3E%3Cpath d='M11.767 14.221a2.354 2.354 0 1 0 0-4.707 2.354 2.354 0 0 0 0 4.707Z' fill='%23DAFF02'/%3E%3Cpath d='M21.18 14.221a2.354 2.354 0 1 0 0-4.707 2.354 2.354 0 0 0 0 4.707Z' fill='%23DAFF02'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M138.336 18.067h-7.507v-3.83h5.209c.436 0 .851-.127 1.179-.432l.006-.005.003-.003.002-.002.006-.006c.315-.315.468-.715.468-1.155 0-.434-.151-.834-.474-1.14l-.004-.004c-.326-.32-.742-.459-1.186-.459h-5.209V7.344h7.507c.436 0 .851-.127 1.179-.432.331-.307.485-.71.485-1.15 0-.44-.145-.85-.475-1.161l-.003-.004c-.326-.32-.742-.459-1.186-.459h-9.191a1.648 1.648 0 0 0-1.188.482l-.001.001c-.34.322-.495.744-.495 1.201V19.59c0 .457.163.87.488 1.195a1.65 1.65 0 0 0 1.196.489h9.191c.436 0 .85-.127 1.179-.432l.006-.005.002-.003.003-.003.005-.005c.322-.321.469-.731.469-1.175 0-.44-.154-.843-.485-1.15-.328-.306-.743-.433-1.179-.433Z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M122.809 5.822c0-.457-.154-.879-.494-1.2V4.62l-.003-.003h-.001a1.648 1.648 0 0 0-1.186-.48c-.652 0-1.161.329-1.479.885l-.007.013-.004.006-.003.006-5.33 10.958-5.475-10.967-.003-.005-.006-.01c-.318-.557-.828-.886-1.479-.886-.453 0-.862.16-1.186.48l-.002.001-.002.002c-.34.322-.495.744-.495 1.201V19.59c0 .457.163.87.489 1.195.325.326.738.489 1.196.489.457 0 .869-.163 1.195-.49.326-.325.489-.737.489-1.194v-7.263l3.669 7.353h-.001.001v.002h.001c.141.291.343.545.619.724.279.18.594.258.92.258.617 0 1.108-.306 1.439-.813l.014-.022.007-.01.006-.011 3.743-7.63v7.412c0 .457.163.87.488 1.195a1.65 1.65 0 0 0 1.196.489c.449 0 .848-.166 1.166-.48l.001-.001.002-.002c.338-.322.515-.735.515-1.201V5.822Z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M102.475 20.537c.324-.498.352-1.06.137-1.605h.001l-.002-.004-.001-.002-.001-.002-5.733-13.682a1.721 1.721 0 0 0-.598-.81 1.654 1.654 0 0 0-.98-.294c-.343 0-.672.09-.958.295-.282.2-.479.482-.614.797v.001l-.001.002-5.713 13.642c-.238.543-.212 1.107.106 1.615.316.506.807.782 1.406.782.311 0 .603-.09.867-.249l.004-.002c.31-.181.537-.45.68-.775l.001-.004.001-.003.001-.002 1.007-2.462h6.443l.988 2.453c.126.315.332.577.611.77l.046.03c.277.158.58.244.901.244.577 0 1.081-.234 1.4-.733l.001-.002Zm-7.143-10.7 1.987 4.936h-4.006l2.02-4.936Z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m85.109 12.282-.001-.001-.003-.003c-.322-.34-.743-.494-1.201-.494H80.1c-.431 0-.832.131-1.162.417a1.474 1.474 0 0 0-.522 1.145c0 .451.18.848.522 1.145.33.286.73.417 1.162.417h2.18v2.635c-.3.172-.606.321-.92.444a4.85 4.85 0 0 1-1.728.304 4.891 4.891 0 0 1-1.997-.411 5.453 5.453 0 0 1-1.674-1.202 5.69 5.69 0 0 1-1.114-1.773 5.988 5.988 0 0 1-.403-2.21c0-.779.136-1.5.402-2.166v-.001l.002-.003a5.637 5.637 0 0 1 1.113-1.792 5.456 5.456 0 0 1 1.677-1.203 4.696 4.696 0 0 1 1.995-.43c.836 0 1.445.11 1.864.294h.002l.001.001h.002c.476.203.943.498 1.401.894l.004.004.002.001.002.002.004.003c.33.273.724.43 1.163.407.406-.02.777-.168 1.071-.458l.003-.002.001-.001c.31-.293.475-.673.475-1.1 0-.144-.015-.294-.056-.44h.001c0-.006-.002-.01-.004-.016v-.005a1.144 1.144 0 0 0-.209-.457 1.52 1.52 0 0 0-.374-.406c-.8-.656-1.62-1.142-2.456-1.441-.832-.303-1.803-.444-2.897-.444-1.193 0-2.31.226-3.344.684a8.483 8.483 0 0 0-2.7 1.887 8.773 8.773 0 0 0-1.795 2.778v.002l-.002.003c-.425 1.056-.635 2.194-.635 3.406 0 1.225.21 2.375.634 3.444l.001.003v.002l.002.002a9.025 9.025 0 0 0 1.792 2.795l.002.003.002.002.001.001.003.003a8.647 8.647 0 0 0 2.695 1.862l.003.002h.001l.002.001.003.002a8.48 8.48 0 0 0 3.335.66c.988 0 1.937-.154 2.845-.461l.003-.001h.002l.003-.002a8.275 8.275 0 0 0 2.53-1.45s.54-.512.551-.86V13.47c0-.445-.14-.861-.46-1.187Z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m69.52 4.61-.003-.004-.003-.003a1.525 1.525 0 0 0-1.131-.465H57.504c-.44 0-.84.153-1.155.468-.31.311-.448.71-.448 1.135 0 .426.137.82.432 1.138l.01.011.006.006.017.016c.318.295.712.432 1.138.432h3.766v12.244c0 .458.162.87.488 1.196.326.326.738.489 1.196.489.457 0 .87-.163 1.195-.489.326-.326.489-.738.489-1.196V7.344h3.745c.425 0 .823-.137 1.134-.448.315-.315.469-.715.469-1.155 0-.43-.148-.826-.465-1.13Z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M52.992 5.822c0-.453-.152-.87-.485-1.192l-.001-.001-.005-.006c-.322-.333-.74-.485-1.192-.485-.453 0-.862.16-1.186.48-.002 0-.002.001-.003.002l-.001.001c-.34.322-.495.744-.495 1.201v13.766c0 .458.163.87.489 1.196.325.326.738.488 1.195.488.458 0 .88-.155 1.201-.494l.002-.002.002-.002c.32-.324.48-.733.48-1.186V5.822Z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m45.868 4.6-.002-.002-.001-.001c-.325-.32-.741-.459-1.185-.459h-9.191c-.453 0-.862.16-1.186.48l-.002.001-.002.002c-.34.322-.494.744-.494 1.201V19.59c0 .457.163.87.488 1.195.326.326.738.489 1.196.489.457 0 .87-.163 1.195-.489.326-.326.489-.738.489-1.195v-5.352h5.209c.436 0 .85-.127 1.179-.432l.005-.005.003-.003.003-.002.005-.006c.315-.315.469-.715.469-1.155 0-.435-.151-.834-.475-1.14l-.002-.002-.002-.002c-.325-.32-.741-.459-1.185-.459h-5.21V7.344h7.508c.435 0 .85-.127 1.178-.432.331-.307.485-.71.485-1.15 0-.44-.145-.85-.475-1.161Z' fill='%23fff'/%3E%3C/svg%3E")`,(n.firstElementChild?.nextElementSibling).style.backgroundImage=`url("data:image/svg+xml,%3Csvg height='32' viewBox='0 0 32 32' width='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='m0 0h32v32h-32z'/%3E%3Cpath d='m29.784768 18.838435c2.1985878-3.0737402 2.215232-4.6673224 2.215232-7.1599086 0-3.8396034-3.504074-8.6785264-8.4317228-8.6785264-3.1677228 0-5.3903301 1.19865916-6.5738832 2.05486929-.2036467.14732275-.3765311.28450698-.5181749.40370211-.6552522.46319824-.3024458.46092892-.9408107.00980343-.1425898-.1204512-.317636-.25980812-.5246323-.40976275-1.1822443-.85645517-3.4067121-2.05861208-6.57905331-2.05861208-4.92764879 0-8.43172279 4.838923-8.43172279 8.6785264 0 3.8396033 1.83194611 7.6268851 5.12706376 10.4418366 3.29511764 2.8149515 5.49751934 4.4983953 7.87293624 5.9509354.370419.2265069.6970491.4294336.984729.6106003 1.5571491.9806166 3.0300559.706874 4.0146911.0610374.3462238-.2270932.6932875-.4591057 1.0005799-.6716377 1.1812096-.8169574 2.5394341-1.7683558 2.5394341-1.7683558s6.0467462-4.3907674 8.2453339-7.4645076z' fill='%23fa4646'/%3E%3C/g%3E%3C/svg%3E")`,n.lastElementChild.style.backgroundImage=`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ctitle%3EHTML5 Logo%3C/title%3E%3Cpath fill='white' d='M108.4 0h23v22.8h21.2V0h23v69h-23V46h-21v23h-23.2M206 23h-20.3V0h63.7v23H229v46h-23M259.5 0h24.1l14.8 24.3L313.2 0h24.1v69h-23V34.8l-16.1 24.8l-16.1-24.8v34.2h-22.6M348.7 0h23v46.2h32.6V69h-55.6'/%3E%3Cpath fill='%23e44d26' d='M107.6 471l-33-370.4h362.8l-33 370.2L255.7 512'/%3E%3Cpath fill='%23f16529' d='M256 480.5V131H404.3L376 447'/%3E%3Cpath fill='%23ebebeb' d='M142 176.3h114v45.4h-64.2l4.2 46.5h60v45.3H154.4M156.4 336.3H202l3.2 36.3 50.8 13.6v47.4l-93.2-26'/%3E%3Cpath fill='%23fff' d='M369.6 176.3H255.8v45.4h109.6M361.3 268.2H255.8v45.4h56l-5.3 59-50.7 13.6v47.2l93-25.8'/%3E%3C/svg%3E")`,o.append(n),o}var Ar=o=>{if(o.button!==0)return;let i=window.devicePixelRatio;h?.p4(o.offsetX*i,o.offsetY*i,o.pointerId)},kr=o=>{h?.keydown(o.code,o.repeat)},Dr=o=>{h?.keyup(o.code)};function Ce(o,i){o.addEventListener("pointermove",n=>{let l=window.devicePixelRatio;h?.q2(n.offsetX*l,n.offsetY*l,n.pointerId)}),o.addEventListener("pointerdown",n=>{if(n.button!==0)return;let l=window.devicePixelRatio;h?.u1(n.offsetX*l,n.offsetY*l,n.pointerId)}),window.addEventListener("pointerup",Ar),document.addEventListener("keydown",kr),i&&document.addEventListener("keyup",Dr),o.addEventListener("wheel",n=>{h?.r3(n.deltaX,n.deltaY)},{passive:!0})}function Te(){window.removeEventListener("pointerup",Ar),document.removeEventListener("keydown",kr),document.removeEventListener("keyup",Dr)}var X=new AudioContext({latencyHint:"playback",sampleRate:22050}),tt=X.createGain();tt.connect(X.destination);var et,Cr=!1;async function Fe(){if(!Cr){et=new AbortController;try{let i=await(await fetch("./resources/mix_9m35s (online-audio-converter.com).m4a",{signal:et.signal})).arrayBuffer();Cr=!0,await new Promise(_=>{let b=setInterval(()=>{X.resume(),X.state==="running"&&(clearInterval(b),_(void 0))},0)});let n=await X.decodeAudioData(i),l=X.createBufferSource();l.buffer=n,l.loop=!0,l.connect(tt),l.start()}catch{}}}function Le(){et.abort()}function rt(o){tt.gain.setValueAtTime(o,X.currentTime)}var Tr=!1,Se=class{#e;#t;constructor(i,n,l,_,b,x,m){i.append(De()),(async()=>{let v=[{name:"animset_game_scene",path:"./resources/an/game_scene_output.json"},{name:"atlas_game_scene",path:"./resources/an/game_scene.json"},{name:"animset_game_scene_lazy",path:"./resources/an/game_scene_lazy_output.json"},{name:"atlas_game_scene_lazy",path:"./resources/an/game_scene_lazy.json"},{name:"animset_weapons_lazy",path:"./resources/an/weapons_lazy_output.json"},{name:"atlas_weapons_lazy",path:"./resources/an/weapons_lazy.json"},{name:"animset_ui_common",path:"./resources/an/ui_common_output.json"},{name:"atlas_ui_common",path:"./resources/an/ui_common.json"}],[p,C,W]=await Promise.all([fetch(`./levels/${m.name}/data.webp`).then(z=>{if(z.ok===!1)throw new Error("");return z.blob()}).then(async z=>{let w=await createImageBitmap(z,{colorSpaceConversion:"none"}),A=document.createElement("canvas");A.width=w.width,A.height=w.height;let y=A.getContext("2d",{alpha:!1});if(y===null)throw new Error("null === context");y.drawImage(w,0,0);let P=y.getImageData(0,0,A.width,A.height);return w.close(),{buffer:P.data.filter((Z,$)=>$%4===0).buffer,width:A.width}}),fetch(`./levels/${m.name}/settings.json`).then(z=>{if(z.ok===!1)throw new Error("");return z.json()}),Ee([{name:"game_scene",path:"./resources/an/game_scene.webp"},{name:"weapons_lazy",path:"./resources/an/weapons_lazy.webp"},{name:"ui_common",path:"./resources/an/ui_common.webp"}]),ze,Tr?Promise.resolve(1):Promise.all([oe,xe(v)]).then(([z,w])=>{z.k7(0,w.animset_game_scene,w.atlas_game_scene,"game_scene",1,!1),z.k7(0,w.animset_game_scene_lazy,w.atlas_game_scene_lazy,"an/game_scene_lazy",1,!0),z.k7(0,w.animset_weapons_lazy,w.atlas_weapons_lazy,"weapons_lazy",1,!1),z.k7(0,w.animset_ui_common,w.atlas_ui_common,"ui_common",1,!1),Tr=!0}),ye]);i.innerHTML=`<div style="height: 100%; overflow: hidden; cursor: url('./resources/target_round_b.png') 16 16, default"></div>`;let F=i.firstElementChild;this.#e=we(F,n);let G=p.width,N=p.buffer.byteLength/G;h.util.inst=this.#e,h.util.sp=W,h.util.f=p.buffer,h.util.w=G,h.util.h=N,O.init_1().then(()=>{O.start()}).catch(()=>{}).finally(()=>{}),l.set_global_volume(l.get_global_volume()),Fe(),h.o(m.mode,Math.round(Math.random()*1e5),n,G,N,C,Wt,m.id,b,x),h.util.sp={},h.util.f=new ArrayBuffer,this.#t=new re(this.#e,1e3/60,()=>{let z=performance.now();h.r();let w=performance.now();Er(w-z)},(z,w,A)=>{ke(F,n),_?.remove();let y=performance.now();h.q6(z,w,A,L,be);let P=performance.now();Ae(P-y)});let K=F.querySelector("canvas"),L=3/4;Ce(K,!0)})()}destroy(){Le(),O.stop_1(),O.stop_2(),Te(),this.#t?.stop(),h?.t(),this.#e?.destroy(),h&&(h.util.inst={}),he()}};var Fr=!1,Me=class{#e;#t;constructor(i,n,l){i.append(De()),(async()=>{let _=[{name:"animset_menu_scene_lazy",path:"./resources/an/menu_scene_lazy_output.json"},{name:"atlas_menu_scene_lazy",path:"./resources/an/menu_scene_lazy.json"},{name:"animset_menu_scene",path:"./resources/an/menu_scene_output.json"},{name:"atlas_menu_scene",path:"./resources/an/menu_scene.json"},{name:"animset_ui_common",path:"./resources/an/ui_common_output.json"},{name:"atlas_ui_common",path:"./resources/an/ui_common.json"},{name:"animset_weapons_lazy",path:"./resources/an/weapons_lazy_output.json"},{name:"atlas_weapons_lazy",path:"./resources/an/weapons_lazy.json"}],[b]=await Promise.all([Ee([{name:"ui_common",path:"./resources/an/ui_common.webp"},{name:"menu_scene",path:"./resources/an/menu_scene.webp"}]),ze,Fr?Promise.resolve(1):Promise.all([oe,xe(_)]).then(([m,v])=>{m.k7(1,v.animset_menu_scene_lazy,v.atlas_menu_scene_lazy,"an/menu_scene_lazy",1,!0),m.k7(1,v.animset_ui_common,v.atlas_ui_common,"ui_common",1,!1),m.k7(1,v.animset_menu_scene,v.atlas_menu_scene,"menu_scene",1,!1),m.k7(1,v.animset_weapons_lazy,v.atlas_weapons_lazy,"an/weapons_lazy",1,!0),Fr=!0}),ye]);i.innerHTML='<div style="height: 100%; overflow: hidden;"></div>';let x=i.firstElementChild;this.#e=we(x,n),Fe(),h.util.inst=this.#e,h.util.sp=b,h.o8(n),h.util.sp={},this.#t=new re(this.#e,1e3/60,()=>{},(m,v,p)=>{ke(x,n),l?.remove();let C=performance.now();h.n3(m,v,be);let W=performance.now();Ae(W-C)}),Ce(x.querySelector("canvas"),!1)})()}destroy(){Le(),Te(),this.#t?.stop(),h?.s7(),this.#e?.destroy(),h&&(h.util.inst={}),he()}};document.getElementById("app").insertAdjacentHTML("afterbegin",`
+    <div style="
+        height: 100%;
+        background: black;
+        user-select: none;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-style: normal;
+        cursor: url('./resources/pointer_c_shaded.png') 5 5, default;
+    "></div>
+`);var ce=document.getElementById("app").firstElementChild;var Lr=1,ot=null,Pe=0,qe={minecraft:{name:"minecraft",id:2},tutorial:{name:"tutorial",id:3},cake:{name:"cake",id:5},green:{name:"green",id:6}},Sr=[qe.minecraft,qe.cake,qe.green],nt=.4,at=.4,Mr=ve(),Re=0,Pr=500,st=0,_a=[0],lt=2,va=[],Rr=-9999999,it={games_played:0,victories:0,defeats:0,kills:0,longest_killstreak:0,shots_made:0,distance_driven_km:0,crates_collected:0,money_earned:0},pa=new Map,ga=new Map,V={get_global_volume:()=>nt,set_global_volume:o=>{nt=o<0?0:o>1?1:o,O.set_global_volume(nt)},get_global_music_volume:()=>at,set_global_music_volume:o=>{at=o<0?0:o>1?1:o,rt(at)},bonus_cooldown_end_seconds:()=>Rr,begin_bonus_cooldown:()=>{Rr=performance.now()*.001+15*60},is_mobile_controls:()=>Mr,set_mobile_controls:o=>{Mr=o},use_after_game_bonus:()=>{let o=Re;return Re=0,o},get_money:()=>Pr,add_money:o=>{Pr+=o,it.money_earned+=Math.max(0,o)},client_skin_color_id:()=>st,set_client_skin_color_id:o=>{st=o},client_trail_color_id:()=>lt,set_client_trail_color_id:o=>{lt=o},unlocked_skin_color_ids:()=>_a,unlocked_trail_color_ids:()=>va,lalaka_1:()=>{setTimeout(Or,650)},lalaka_2:()=>{setTimeout(ha,650)},exit_match:()=>{setTimeout(ba,650)},end_game:(o,i)=>{o||(Re=i)},triple_reward:()=>{Re*=3},player_stats:()=>it,distance_driven_km:()=>it.distance_driven_km.toFixed(1),inventory_handtools:()=>pa,inventory_perks:()=>ga};document.addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&(O.set_global_volume(0),rt(0)),document.visibilityState==="visible"&&(V.set_global_volume(V.get_global_volume()),V.set_global_music_volume(V.get_global_music_volume()))});oe.then(o=>{o.util.state=V});function ne(o,i=void 0){if(Lr!=o&&ot?.destroy(),Lr=o,o==1){ne=()=>{},ce.innerHTML=`
+            <div style="
+                font-size: 4vh;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            ">${se[Pe].mainMenu.endedDueToUnhandledException}</div>
+        `;return}let n=document.createElement("div");n.style.position="absolute",n.style.inset="0",n.style.display="flex",n.style.alignItems="center",n.style.justifyContent="center",n.style.fontSize="3vh",n.style.color="white",n.style.zIndex="1045",n.style.pointerEvents="none",n.style.userSelect="none",n.textContent=se[Pe].mainMenu.loadingGameData,ce.innerHTML="",ce.append(n),o==2&&(ot=new Me(ce,se[Pe],n)),o==0&&(ot=new Se(ce,se[Pe],V,n,st,lt,i))}window.addEventListener("error",o=>{ne(1),alert("unhandled exception: "+o?.message)});window.addEventListener("rejectionhandled",o=>{ne(1),alert(`Promise rejected; reason: ${o.reason}`)},!1);window.addEventListener("unhandledrejection",o=>{ne(1),alert(`UNHANDLED PROMISE REJECTION: ${o.reason}`)});function qr(o){ne(0,{mode:0,id:o.id,name:o.name})}function Or(){qr(qe.tutorial)}function ha(){qr(Sr[Math.floor(Math.random()*Sr.length)])}function ba(){ne(2)}Or();V.set_global_music_volume(V.get_global_music_volume());
+</script>
+    </body>
+</html>
